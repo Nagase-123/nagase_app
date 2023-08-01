@@ -1,0 +1,81 @@
+/*faq用*/
+@charset "utf-8";
+@import url("reset.css");
+body{
+  font-family: 'Kaisei Decol', serif;
+  color: rgba(117, 79, 68, 0.8);
+}
+.return_top{
+  text-align: right;
+  margin: auto;
+  width: 100%;
+  color: rgba(117, 79, 68, 0.8);
+  margin-top: 2%;
+}
+.return_top a:hover,
+.return_top a:focus{
+  color: #ff9467;
+}
+a{
+  color: #705339;
+}
+a:hover,
+a:focus{
+  color: #ff9467;
+}
+.box_all{
+  background-color: #fff;
+  border-radius: 3px;
+  width: 88%;
+  padding-top: 20px;
+  margin:0 auto;
+}
+.text-center {
+  text-align: center !important;
+}
+/*
+*faq
+*/
+
+#QandA-1 {
+  width: 100%;
+  font-family: メイリオ;
+  font-size: 14px; /*全体のフォントサイズ*/
+}
+#QandA-1 .faq_title {
+  color: #705339;
+  text-align: center;
+  padding-left: 0;
+  margin: 2% 0;
+  width: 100%;
+}
+.faq_title::after,.faq_title::before{
+  display: none;
+}
+#QandA-1 dt {
+  background: rgba(255,233,88,0.7); /* 「Q」タイトルの背景色 */
+  color: #3f3531; /* 「Q」タイトルの文字色 */
+  color:#705339;
+  padding: 8px;
+  border-radius: 2px;
+}
+#QandA-1 dt:before {
+  content: "Q.";
+  font-weight: bold;
+  margin-right: 8px;
+}
+#QandA-1 dd {
+  margin: 24px 16px 40px 32px;
+  line-height: 140%;
+  text-indent: -24px;
+  color:#705339;
+  display: none;
+}
+#QandA-1 dd:before {
+  content: "A.";
+  font-weight: bold;
+  margin-right: 8px;
+}
+.dotted_line{
+  border-top: 1px dashed #705339;
+}
