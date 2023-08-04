@@ -98,7 +98,7 @@
               </div>
 
               <div class="row g-0" id="biginner">
-                <img class="col-lg-6 text-white showcase-img animation2" src="{{ asset('assets/img/bg-showcase-2.jpg') }}">
+                <img class="col-lg-6 text-white showcase-img animation2" src="{{ asset('assets/img/bg-showcase-1.jpg') }}">
                 <div class="col-lg-6 my-auto showcase-text animation">
                   <h2 class="caption-msg">For biginner</h2>
                   <p class="lead mb-0">1.初めての方は新規会員登録の上、マイページにログインください<br>
