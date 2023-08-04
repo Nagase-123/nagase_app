@@ -82,7 +82,7 @@
 
           <div class="container-fluid p-0">
             <div class="row g-0" id="consept">
-              <img class="col-lg-6 order-lg-2 text-white showcase-img animation2" src="{{ asset('assets/img/bg-showcase-2.jpg') }}">
+              <img class="col-lg-6 order-lg-2 text-white showcase-img animation2" src="{{ asset('assets/img/bg-showcase-1.jpg') }}">
               <div class="col-lg-6 order-lg-1 my-auto showcase-text animation">
                 <h2 class="caption-msg">Consept</h2>
                 <p class="lead mb-0">Chuetteはフランス語で「素晴らしい、素敵な」といった意味があります。<br>
