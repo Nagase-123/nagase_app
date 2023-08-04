@@ -14,12 +14,7 @@
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
   <link href="https://fonts.googleapis.com/css2?family=Kaisei+Decol&display=swap" rel="stylesheet">
   <!-- Core theme CSS (includes Bootstrap)-->
-  {{--<link href="{{ asset('css/styles.css') }}" rel="stylesheet" /> --}}
-    @if(app('env') == 'production')
     <link href="{{ secure_asset('css/styles.css') }}" rel="stylesheet">
-    @else
-    <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
-    @endif
   <!-- jquery-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -87,7 +82,7 @@
 
           <div class="container-fluid p-0">
             <div class="row g-0" id="consept">
-              <img class="col-lg-6 order-lg-2 text-white showcase-img animation2" src="{{ asset('assets/img/bg-showcase-1.jpg') }}">
+              <img class="col-lg-6 order-lg-2 text-white showcase-img animation2" src="{{ asset('assets/img/bg-showcase-2.jpg') }}">
               <div class="col-lg-6 order-lg-1 my-auto showcase-text animation">
                 <h2 class="caption-msg">Consept</h2>
                 <p class="lead mb-0">Chuetteはフランス語で「素晴らしい、素敵な」といった意味があります。<br>
