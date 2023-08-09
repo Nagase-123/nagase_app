@@ -410,7 +410,7 @@ class Controller extends BaseController
         *管理者　お問合せ返信完了
         */
         case 'reply_comp':
-        /* herokuでの処理
+        /* herokuでの処理*/
         $pax_name = $results['name']."様";
         require base_path('vendor/autoload.php');
         $email = new \SendGrid\Mail\Mail();
@@ -421,7 +421,7 @@ class Controller extends BaseController
         $sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
 
         $response = $sendgrid->send($email);
-        */
+
         /*↓本来の処理*/
         /*  Mail::send('emails.contact_mailsend', $data, function($message)use($results){
         $text = $results['textarea_box'];
