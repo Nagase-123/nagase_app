@@ -953,7 +953,7 @@ public function showPasswordReset(Request $request){
   $result;
 
   if($token_url == $token){
-    $anser = '新しいパスワードを入力してください';
+    $anser = 'パスワードを入力後、送信ボタンを押してください';
     $result = true;
   }else{
     $anser = '有効期限が切れています';
@@ -984,11 +984,13 @@ public function showPasswordResetComp(Request $request){
   if(isset($user_id)){
     $user = new User();
     $user->updateUserPassword($inputs);
+    $request->session()->flush();
     return view('login_logout.pass_reset_comp');
 
   }else if(isset($stylist_id)){
     $stylist = new Hairstylist();
     $stylist->updateStylistPassword($inputs);
+    $request->session()->flush();
     return view('login_logout.pass_reset_comp');
   }
 }
