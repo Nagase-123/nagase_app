@@ -273,8 +273,10 @@ button a{
   margin-right: auto;
 }
 .Form-Item-Login:hover,
-.Form-Item-Login:focus{
+.Form-Item-Login:focus,
+.Form-Item-Login:active {
   outline-color: #705339;/*茶色*/
+  outline: none;
 }
 .navbar-brand{
   color: #705339;
