@@ -26,10 +26,10 @@
 <body>
   <!-- Navigation-->
   <nav class="navbar navbar-light bg-light static-top">
-    <div class="container" ontouchstart="">
+    <div class="container" ontouchstart>
       <a class="navbar-brand" href="{{url('/')}}"><i class="bi bi-scissors m-auto text-primary"></i>Chouette
         <i class="bi bi-scissors m-auto text-primary"></i></a>
-        <a class="btn btn-primary" href="{{ url('/login_logout/login')}}" ontouchstart="">ログイン</a>
+        <a class="btn btn-primary" href="{{ url('/login_logout/login')}}" ontouchstart>ログイン</a>
       </div>
     </nav>
 
@@ -38,10 +38,10 @@
       <div class="container position-relative">
         <div class="row justify-content-center">
           <div class="col-xl-6 animation3">
-            <div class="text-center text-white" ontouchstart="">
+            <div class="text-center text-white" ontouchstart>
               <!-- Page heading-->
               <h1 class="mb-5 heading-msg">une chouette femme</h1>
-              <a class="btn btn-primary" href="{{ url('/top/signup') }}" ontouchstart="">新規会員登録はこちらから</a>
+              <a class="btn btn-primary" href="{{ url('/top/signup') }}" ontouchstart>新規会員登録はこちらから</a>
             </div>
           </div>
         </div>
@@ -98,7 +98,7 @@
 
               <div class="row g-0" id="biginner">
                 <img class="col-lg-6 text-white showcase-img animation2" src="{{ asset('assets/img/bg-showcase-2.jpg') }}">
-                <div class="col-lg-6 my-auto showcase-text animation" ontouchstart="">
+                <div class="col-lg-6 my-auto showcase-text animation" ontouchstart>
                   <h2 class="caption-msg">For biginner</h2>
                   <p class="lead mb-0">1.初めての方は新規会員登録の上、マイページにログインください<br>
                     2.マイページにて、ご希望の美容師をご選択ください<br>
@@ -106,7 +106,7 @@
                     4.当日美容師がご予約時間にご自宅へお伺いします<br>
                     5.料金をお支払いいただき、施術をお受けください</p>
                     <br>
-                    <a class="btn btn-primary" href="{{ url('/top/signup') }}" ontouchstart="">新規会員登録はこちらから</a>
+                    <a class="btn btn-primary" href="{{ url('/top/signup') }}" ontouchstart>新規会員登録はこちらから</a>
                   </div>
                 </div>
                 <div class="row g-0" id="menue">
@@ -170,8 +170,8 @@
                           <div class="row justify-content-center">
                             <div class="col-xl-6">
                               <h2 class="mb-4 nav-signup">Click here to register as a new member.</h2>
-                              <div class="col-auto" ontouchstart="">
-                                <a class="btn btn-primary" href="{{ url('/top/signup') }}" ontouchstart="">新規会員登録はこちらから</a>
+                              <div class="col-auto" ontouchstart>
+                                <a class="btn btn-primary" href="{{ url('/top/signup') }}" ontouchstart>新規会員登録はこちらから</a>
                               </div>
                             </div>
                           </div>
