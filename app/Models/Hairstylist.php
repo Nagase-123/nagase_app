@@ -156,10 +156,10 @@ class Hairstylist extends Model
     ]);
   }
 
-  /*Controllerで使われていない
+  /*
   *パスワード再設定時　会員が存在するかチェック
   */
-/*  public function check_register_stylist($mail,$name){
+  public function stylistMemberCheck($mail,$name){
     // メールアドレスとパスが入力されたらDBに存在するかチェック
     $db_name = null;
     $db_id = null;
@@ -188,7 +188,7 @@ class Hairstylist extends Model
       return $db_id;
     }
   }
-*/
+
   /*
   *パスワード変更
   */

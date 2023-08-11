@@ -215,7 +215,7 @@ class User extends Authenticatable
   /*
   *パスワード再設定　メールと名前が存在するかチェック
   */
-/*  public function check_register_user($mail,$name){
+  public function userMemberCheck($mail,$name){
     $db_name = null;
     $db_id = null;
 
@@ -244,7 +244,7 @@ class User extends Authenticatable
       return $db_id;
     }
   }
-*/
+
   /*
   *パスワード再設定
   */
