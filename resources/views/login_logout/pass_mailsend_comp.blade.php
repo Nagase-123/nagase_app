@@ -9,6 +9,6 @@
 @endsection
 
 @section('link1')
-<a href="{{url('/contact')}}">お問い合わせ</a><br>
+<a href="{{url('/contact/contact')}}">お問い合わせ</a><br>
 <a href="{{url('/login_logout/login')}}">ログイン画面へ戻る</a>
 @endsection

@@ -29,12 +29,12 @@
 
   <div class="Form-Item">
     <p class="Form-Item-Label">メールアドレス</p>
-    <input type="text" name="メール" id="mail" class="Form-Item-Input" value="{{old('mail')}}" required>
+    <input type="text" name="メール" id="mail" class="Form-Item-Input" value="{{old('mail')}}" required placeholder="例）example@gmail.com">
   </div>
 
   <div class="Form-Item">
     <p class="Form-Item-Label">お名前</p>
-    <input type="text" name="名前" id="name" class="Form-Item-Input" value="{{old('name')}}" required>
+    <input type="text" name="名前" id="name" class="Form-Item-Input" value="{{old('name')}}" required placeholder="例）山田太郎">
   </div>
 
   <div class="center">
