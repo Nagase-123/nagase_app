@@ -236,7 +236,7 @@ class Controller extends BaseController
         if($update_anser){
 
           $comp_title = "プロフィール編集完了";
-          $comp_msg1=" プロフィール編集が完了しました";
+          $comp_msg1=" プロフィール編集が完了しました。";
         }else{
           $comp_title = 'プロフィール 編集失敗';
           $comp_msg1 = 'プロフィールの編集に失敗しました。';
@@ -258,7 +258,7 @@ class Controller extends BaseController
         //上記情報をスケジュールに渡す
         $test = $schedule->cancelSchedule($anser);
         $comp_title = "予約キャンセル完了";
-        $comp_msg1=" 予約キャンセルが完了しました";
+        $comp_msg1=" 予約キャンセルが完了しました。";
         break;
 
         /*
@@ -278,7 +278,7 @@ class Controller extends BaseController
           $anser ='trueでもfalseでもない';
         }
         $comp_title = "スケジュール登録完了";
-        $comp_msg1="スケジュール登録が完了しました";
+        $comp_msg1="スケジュール登録が完了しました。";
         $url = "/stylist/schedule_add";
         $link_name = "スケジュール登録へ";
         break;
@@ -295,7 +295,7 @@ class Controller extends BaseController
 
         if($anser == 'true'){
           $comp_title = "スケジュール削除完了";
-          $comp_msg1 = "スケジュールの削除が完了しました";
+          $comp_msg1 = "スケジュールの削除が完了しました。";
         }else{
           $comp_title = "スケジュール削除失敗";
           $comp_msg1 = "スケジュールの削除に失敗しました。";
@@ -315,7 +315,7 @@ class Controller extends BaseController
         $user->updateMemo($inputs);
         $stylist_id = $request->session()->get('stylist_id');
         $comp_title ="顧客メモ更新完了";
-        $comp_msg1 = "顧客メモの更新が完了しました";
+        $comp_msg1 = "顧客メモの更新が完了しました。";
         $url = "/stylist/reservation_history";
         $link_name = "予約履歴一覧へ";
 
@@ -436,7 +436,7 @@ class Controller extends BaseController
       //メール送信が完了したらフラグを変える
       $contact->changeInquiryFlag($results['contact_id']);
       $comp_title = "返信完了";
-      $comp_msg1 = "お問合せへの返信が完了しました";
+      $comp_msg1 = "お問合せへの返信が完了しました。";
       $url="/admin/contact_list";
       $link_name="お問合せ一覧";
 
@@ -1185,8 +1185,8 @@ public function showUserComp(Request $request){
       $reservation->changeComment($inputs);
       $u_id = $inputs['u_id'];
       $comp_title = 'コメント変更完了';
-      $comp_msg1 = 'コメント変更が完了しました';
-      $comp_msg2 = '予約詳細は予約履歴からご確認ください';
+      $comp_msg1 = 'コメント変更が完了しました。';
+      $comp_msg2 = '予約詳細は予約履歴からご確認ください。';
       $url ="/user/reservation_history";
       $link_name = "予約履歴一覧";
       break;
@@ -1206,7 +1206,7 @@ public function showUserComp(Request $request){
         $s = $schedule->changeScheduleToReserved($inputs);
         $comp_title = '予約完了';
         $comp_msg1 = 'ご予約が完了しました。';
-        $comp_msg2 = '予約詳細は予約履歴からご確認ください';
+        $comp_msg2 = '予約詳細は予約履歴からご確認ください。';
       }else{
         //スケジュールに空きがない場合
         $comp_title ="※ご予約が完了できませんでした。";
@@ -1226,7 +1226,7 @@ public function showUserComp(Request $request){
       //上記情報をスケジュールに渡す
       $result = $schedule->cancelSchedule($anser);
       $comp_title = 'キャンセル完了';
-      $comp_msg1 = 'キャンセルが完了しました';
+      $comp_msg1 = 'キャンセルが完了しました。';
       $url ="/user/reservation_history";
       $link_name = "予約履歴一覧";
       $u_id = $inputs['u_id'];
@@ -1248,7 +1248,7 @@ public function showUserComp(Request $request){
 
       if($update_anser){
         $comp_title = '会員情報変更完了';
-        $comp_msg1 = '会員情報の変更が完了しました';
+        $comp_msg1 = '会員情報の変更が完了しました。';
       }else{
         $comp_title = '会員情報 変更失敗';
         $comp_msg1 = '会員情報の変更に失敗しました。';
