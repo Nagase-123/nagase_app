@@ -23,13 +23,13 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 </head>
-<body ontouchstart="">
+<body>
   <!-- Navigation-->
   <nav class="navbar navbar-light bg-light static-top">
     <div class="container">
       <a class="navbar-brand" href="{{url('/')}}"><i class="bi bi-scissors m-auto text-primary"></i>Chouette
         <i class="bi bi-scissors m-auto text-primary"></i></a>
-        <a class="btn btn-primary" href="{{ url('/login_logout/login')}}">ログイン</a>
+        <a class="btn btn-primary" href="{{ url('/login_logout/login')}}" ontouchstart="">ログイン</a>
       </div>
     </nav>
 
@@ -41,7 +41,7 @@
             <div class="text-center text-white">
               <!-- Page heading-->
               <h1 class="mb-5 heading-msg">une chouette femme</h1>
-              <a class="btn btn-primary" href="{{ url('/top/signup') }}">新規会員登録はこちらから</a>
+              <a class="btn btn-primary" href="{{ url('/top/signup') }}" ontouchstart="">新規会員登録はこちらから</a>
             </div>
           </div>
         </div>
@@ -106,7 +106,7 @@
                     4.当日美容師がご予約時間にご自宅へお伺いします<br>
                     5.料金をお支払いいただき、施術をお受けください</p>
                     <br>
-                    <a class="btn btn-primary" href="{{ url('/top/signup') }}">新規会員登録はこちらから</a>
+                    <a class="btn btn-primary" href="{{ url('/top/signup') }}" ontouchstart="">新規会員登録はこちらから</a>
                   </div>
                 </div>
                 <div class="row g-0" id="menue">
@@ -171,7 +171,7 @@
                             <div class="col-xl-6">
                               <h2 class="mb-4 nav-signup">Click here to register as a new member.</h2>
                               <div class="col-auto">
-                                <a class="btn btn-primary" href="{{ url('/top/signup') }}">新規会員登録はこちらから</a>
+                                <a class="btn btn-primary" href="{{ url('/top/signup') }}" ontouchstart="">新規会員登録はこちらから</a>
                               </div>
                             </div>
                           </div>
