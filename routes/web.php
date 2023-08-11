@@ -36,7 +36,7 @@ Route::get('/login_logout/reset_request', function () {
 Route::get('/login_logout/login', function () {
   return view('login_logout.login');
 });
-Route::get('/login_logout/pass_mailsend_comp', function () {
+Route::post('/login_logout/pass_mailsend_comp', function () {
   return view('login_logout.pass_mailsend_comp');
 });
 Route::get('/login_logout/stylist_login', function () {
