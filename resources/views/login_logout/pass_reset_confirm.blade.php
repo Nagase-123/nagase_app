@@ -14,8 +14,6 @@
 
   @section('content')
 
-  @section('msg2')
-
   @if($result == true)
 
   @php
@@ -24,8 +22,6 @@
 
     ID:{{$user_id}} ユーザー会員
     <input type="hidden" name="user_id" id="user_id" class="input1" value="{{$user_id}}">
-    @endsection
-
     @php
   }else if(isset($stylist_id)){
     @endphp
