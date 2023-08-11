@@ -3,18 +3,13 @@
 
 <form method="POST" action="/login_logout/pass_reset_comp" autocomplete="off">
   @csrf
+@endsection
 
   @section('title')
   パスワード再設定
   @endsection
 
-  @section('msg1')
-  パスワードを入力後、送信ボタンを押してください。
-  @endsection
-
   @section('content')
-
-  @section('msg2')
 
   @if($result == true)
 
@@ -22,21 +17,18 @@
   if(isset($user_id)){
     @endphp
 
-    ID:{{$user_id}} ユーザー会員
-    <input type="hidden" name="user_id" id="user_id" class="input1" value="{{$user_id}}">
-    @endsection
-
+    <p>ID:{{$user_id}} ユーザー会員
+    <input type="hidden" name="user_id" id="user_id" class="input1" value="{{$user_id}}"></p>
     @php
   }else if(isset($stylist_id)){
     @endphp
-    ID:{{$stylist_id}} 美容師会員
-    <input type="hidden" name="stylist_id" id="stylist_id" class="input1" value="{{$stylist_id}}">
-
+    </p>ID:{{$stylist_id}} 美容師会員
+    <input type="hidden" name="stylist_id" id="stylist_id" class="input1" value="{{$stylist_id}}"></p>
     @php
   }
   @endphp
-  @endsection
 
+  <p>パスワードを入力後、送信ボタンを押してください。</p>
   <p>{{$anser}}</p>
   @if(isset($msg))
   <p class="error_msg">※{{$msg}}</p>
@@ -66,7 +58,7 @@
   @else
   <p>{{$anser}}</p>
 
-  <p class="error_msg">もう一度やり直してください</p>
+  <p>もう一度やり直してください</p>
   <a href="{{url('/login_logout/login')}}">ログイン画面へ戻る</a>
 
   @endif
