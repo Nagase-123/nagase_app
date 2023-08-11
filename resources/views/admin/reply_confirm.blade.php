@@ -23,7 +23,7 @@
 
   <div class="Form-Item">
     <p class="Form-Item-Label">本文</p>
-    <input type="text" name="textarea_box" id="textarea_box" class="Form-Item-Textarea confirm-style" value="{{$results['textarea_box']}}" readonly tabindex="-1">
+    <textarea name="textarea_box" class="Form-Item-Textarea confirm-style" readonly tabindex="-1"> {{$results['textarea_box']}}</textarea>
   </div>
 
   <input type="hidden" name="contact_id" id="contact_id" value="{{$results['contact_id']}}">
