@@ -21,7 +21,7 @@ body{
 input[type="text"],
 input[type="email"],
 input[type="password"] {
-  background-color: #fdf8db;
+  background-color: #fdf8db;/*薄い肌色*/
   color: #705339;
 }
 input[type="text"]:focus,
@@ -29,7 +29,7 @@ input[type="email"]:focus,
 input[type="password"]:focus {
   background:rgba(255,233,88,0.8);
   color:#3f3531;
-  border:1px solid rgba(255,233,88,0.8);
+  border:1px solid rgba(255,233,88,0.8);/*黄色*/
 }
 textarea{
   background-color: #fdf8db;
@@ -135,10 +135,13 @@ textarea:focus{
   width: 90%;
   max-width: 410px;
   font-size: 18px;
-  background-color: #fdf8db;
+  background-color: #fdf8db;/*肌色*/
   border: 1px solid #ddd;
   color: #705339;
-
+}
+.Form-Item-Input:hover,
+.Form-Item-Input:focus {
+  outline-color: #705339;/*茶色*/
 }
 @media screen and (max-width: 480px) {
   .Form-Item-Input {
@@ -191,7 +194,7 @@ textarea:focus{
 .Form-Btn:focus {
   background: -webkit-gradient( linear, left top, left bottom, from(#ff9467), to(#ff9467));
   background: transparent -moz-linear-gradient(center top , #ff9467 0%, #ff9467) repeat scroll 0% 0%;
-  background-color:#ff9467;
+  background-color:#ff9467;/*オレンジ*/
   border: 1px solid #ff9467;
   color:#fff;
 }
@@ -213,7 +216,7 @@ table{
 .tb01 th,
 .tb01 td{
   padding: 10px;
-  border: solid 1px #ccc;
+  border: solid 1px #ccc;/*グレー*/
   text-align:center;
   box-sizing:border-box;
 }
@@ -254,7 +257,7 @@ table{
   }
 }
 fieldset {
-  border: 1px solid rgba(112, 83, 57, 0.3);
+  border: 1px solid rgba(112, 83, 57, 0.3);/*茶色*/
   color: #705339;
   border-radius: 6px;
 }
@@ -268,6 +271,10 @@ button a{
 .Form-Item-Login{
   margin-left: auto;
   margin-right: auto;
+}
+.Form-Item-Login:hover,
+.Form-Item-Login:focus{
+  outline-color: #705339;/*茶色*/
 }
 .navbar-brand{
   color: #705339;
