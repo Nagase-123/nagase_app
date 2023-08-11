@@ -2907,7 +2907,12 @@ textarea.form-control-lg {
   --bs-btn-disabled-border-color: #FBFFB9;
   font-family: 'Kaisei Decol', serif;
 }
-
+.btn-primary:hover,
+.btn-primary:focus{
+  color: #fff;/*白*/
+  background-color: #ff9467;/*オレンジ*/
+  border-color: #ff9467;
+}
 .btn-secondary {
   --bs-btn-color: #fff;
   --bs-btn-bg: #6c757d;
