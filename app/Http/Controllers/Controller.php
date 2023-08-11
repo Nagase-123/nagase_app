@@ -937,8 +937,7 @@ public function sendEmailReset(Request $request){
     });*/
   }//else if
 
-  return view('login_logout.pass_mailsend_comp',[
-  ]);
+  return view('login_logout.pass_mailsend_comp');
 }
 
 /*
