@@ -36,9 +36,6 @@ Route::get('/login_logout/reset_request', function () {
 Route::get('/login_logout/login', function () {
   return view('login_logout.login');
 });
-Route::post('/login_logout/pass_mailsend_comp', function () {
-  return view('login_logout.pass_mailsend_comp');
-});
 Route::get('/login_logout/stylist_login', function () {
   return view('login_logout.stylist_login');
 });
@@ -94,6 +91,8 @@ Route::get('/login_logout/logout_comp',[Controller::class,'showLogoutComp']);
 Route::post('/login_logout/stylist_login',[Controller::class,'stylistConfirmPossibleToLogin']);
 Route::post('/login_logout/pass_reset_comp',[Controller::class,'showPasswordResetComp']);
 Route::get('/login_logout/pass_reset_confirm',[Controller::class,'showPasswordReset']);
+Route::post('/login_logout/pass_mailsend_comp',[Controller::class,'sendEmailReset']);
+
 
 /*contact*/
 Route::post('/contact/confirm',[Controller::class,'confirmInquiryDetail']);
