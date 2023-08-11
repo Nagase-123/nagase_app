@@ -865,6 +865,83 @@ public function confirmPossibleToLogin(Request $request){
 }
 
 /*
+*ログイン関連 resert_request　パスワードリセット
+*/
+public function sendEmailReset(Request $request){
+  $request->validate([
+    'メール'=>'required',
+    '名前'=>'required',
+  ]);
+  $data = [ ];
+  $pax_name = $request['名前']."様";
+
+  //DBに存在するかを確認する必要があり
+  $mail = $request['メール'];
+  $name = $request['名前'];
+
+  $user = new User();
+  $stylist = new Hairstylist();
+  //DBに情報が存在するかチェック
+  //存在する場合はIDを取得する
+  $user_id = $user->userMemberCheck($mail,$name);
+  $stylist_id = $stylist->stylistMemberCheck($mail,$name);
+
+  //ユーザー会員でも美容師でもない場合
+  if($user_id == null && $stylist_id == null){
+
+  }else if(isset($user_id)){
+    require base_path('vendor/autoload.php');
+    $email = new \SendGrid\Mail\Mail();
+    $email->setFrom("nagase3@hotmail.com", "chouette運営事務局");
+    $email->setSubject("パスワード再設定");
+    $email->addTo($mail, $pax_name);
+    $token = bin2hex(random_bytes(32));
+    session()->put('user_id',$user_id);
+    session()->put('token',$token);
+    $url = "https://nagase-app-c4be2a7c0a2c.herokuapp.com/login_logout/pass_reset_confirm?token=".$token;
+    $email->addContent("text/plain","パスワード再設定用のURLをお送りします。".$url);
+    $sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
+    $response = $sendgrid->send($email);
+
+    //↓本来の処理
+    /*session()->put('user_id',$user_id);
+    Mail::send('emails.mailsend', $data, function($message)use($request){
+      $inputs = $request->all();
+      $mail = $inputs['メール'];
+      $message->to($mail, 'Test')
+      ->from('XXXXX@XXXXX.co.jp','Reffect')
+      ->subject('パスワード再設定');
+    });*/
+  }else if(isset($stylist_id)){
+    require base_path('vendor/autoload.php');
+    $email = new \SendGrid\Mail\Mail();
+    $email->setFrom("nagase3@hotmail.com", "chouette運営事務局");
+    $email->setSubject("パスワード再設定");
+    $email->addTo($mail, $pax_name);
+    $token = bin2hex(random_bytes(32));
+    session()->put('stylist_id',$stylist_id);
+    session()->put('token',$token);
+    $url = "https://nagase-app-c4be2a7c0a2c.herokuapp.com/login_logout/pass_reset_confirm?token=".$token;
+    $email->addContent("text/plain","パスワード再設定用のURLをお送りします。".$url);
+    $sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
+    $response = $sendgrid->send($email);
+
+    //↓本来の処理
+/*      session()->put('stylist_id',$stylist_id);
+    Mail::send('emails.mailsend', $data, function($message)use($request){
+      $inputs = $request->all();
+      $mail = $inputs['メール'];
+      $message->to($mail, 'Test')
+      ->from('XXXXX@XXXXX.co.jp','Reffect')
+      ->subject('パスワード再設定');
+    });*/
+  }//else if
+
+  return view('login_logout.pass_mailsend_comp',[
+  ]);
+}
+
+/*
 *　ログイン関連 パスワード再設定　
 */
 public function showPasswordReset(Request $request){
