@@ -18,7 +18,7 @@ class Hairstylist extends Model
   *美容師　会員登録
   */
   public function stylistRegister($inputs){
-    $user = new Hairstylist();
+    $stylist = new Hairstylist();
 
     $tel;
     if(isset($inputs['電話番号'])){
@@ -29,16 +29,16 @@ class Hairstylist extends Model
 
     $pass = $inputs['password'];
 
-    $user->hairstylist_name = $inputs['名前'];
-    $user->hairstylist_kana = $inputs['フリガナ'];
-    $user->hairstylist_tel = $tel;
-    $user->hairstylist_mail = $inputs['メール'];
-    $user->hairstylist_address = $inputs['住所'];
-    $user->hairstylist_pass = Hash::make($pass);
-    $user->hairstylist_advantage =$inputs['得意スタイル'];
-    $user->hairstylist_profile =$inputs['自己紹介'];
+    $stylist->hairstylist_name = $inputs['名前'];
+    $stylist->hairstylist_kana = $inputs['フリガナ'];
+    $stylist->hairstylist_tel = $tel;
+    $stylist->hairstylist_mail = $inputs['メール'];
+    $stylist->hairstylist_address = $inputs['住所'];
+    $stylist->hairstylist_pass = Hash::make($pass);
+    $stylist->hairstylist_advantage =$inputs['得意スタイル'];
+    $stylist->hairstylist_profile =$inputs['自己紹介'];
 
-    $user->save();
+    $stylist->save();
   }
 
   /*
