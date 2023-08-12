@@ -91,7 +91,7 @@
 				</dd>
 
 				<dt>パーマ・カラーは可能ですか</dt>
-				<dd>パーマ・カラーには対応しておりません。<br>
+				<dd id="q1">パーマ・カラーには対応しておりません。<br>
 					メニューはこちらをご参照ください。<br>
 					<a href="{{ url('#menue')}}">メニュー一覧</a>
 				</dd>
@@ -125,6 +125,14 @@
 			$(this).next().slideToggle();
 		});
 	});
+
+	//パーマカラーの質問からメニューへ
+	$(function(){
+		$("#q1 a").on("click",function(){
+			$("#menue").next().slideToggle();
+		});
+	});
+
 	</script>
 </body>
 </html>
