@@ -56,17 +56,32 @@ if($anser == true){
 
     @php
   }else if($anser == false){
+    if($stylist->isEmpty()){
     @endphp
     <h2>新規会員登録はできません</h2>
 
-    <p class="error_msg">※メールアドレスは既に登録済みです</p>
-    <p>会員ページにログインの上ご利用ください</p>
+    <p class="error_msg">※メールアドレスは既に登録済みです。</p>
+    <p>会員ページにログインの上ご利用ください。</p>
 
     <div class="center">
       <button type ="button" class="Form-Btn" id="return" onclick=history.back()>戻 る</button>
       <button type="button" class="Form-Btn"><a href="{{ url('/login_logout/login')}}">ログインページ</a></button>
     </div>
     @php
+  }else{
+    @endphp
+    <h2>新規会員登録はできません</h2>
+    <p class="error_msg">※メールアドレスは美容師会員に登録済みです。</p>
+    <p>ユーザー会員として登録をされる場合は、別のメールアドレスにてご登録をお願いいたします。</p>
+
+    <div class="center">
+      <button type ="button" class="Form-Btn" id="return" onclick=history.back()>戻 る</button>
+      <button type="button" class="Form-Btn"><a href="{{ url('/login_logout/stylist_login')}}">ログインページ</a></button>
+    </div>
+
+  @php
+  }
+
   }
   @endphp
   @endsection

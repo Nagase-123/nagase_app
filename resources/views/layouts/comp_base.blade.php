@@ -26,6 +26,9 @@
   .center{
     display: flex;
   }
+  .a-link-style{
+    margin-bottom: 3%;
+  }
 
 </style>
 </head>

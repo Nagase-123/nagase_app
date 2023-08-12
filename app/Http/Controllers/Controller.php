@@ -672,12 +672,15 @@ public function confirmUserRegister(Request $request){
   //フォームからの入力値を全て取得
   $inputs = $request->all();
   $users = new User();
+  $stylists = new Hairstylist();
   $mail = $inputs['メール'];
   //会員登録があればuserにはIDが入る
   $user = $users->getUserMatchedMail($mail);
+  //美容師登録があればIDが入る
+  $stylist = $stylists->getStylistMatchedMail($mail);
   $anser;
   //anserがtrueなら新規会員登録できる
-  if($user->isEmpty()){
+  if($user->isEmpty() && $stylist->isEmpty()){
     $anser = true;
   }else{
     //userに値が入っている場合は会員登録あり
@@ -690,6 +693,7 @@ public function confirmUserRegister(Request $request){
     'inputs'=>$inputs,
     'anser'=>$anser,
     'user'=>$user,
+    'stylist'=>$stylist,
     'mail'=>$mail,
   ]);
 }
@@ -711,14 +715,17 @@ public function confirmStylistRegister(Request $request){
   ]);
   //フォームからの入力値を全て取得
   $inputs = $request->all();
-
+  $users = new User();
   $stylists = new Hairstylist();
   $mail = $inputs['メール'];
   //会員登録があればstylistには美容師のデータが入る
   $stylist = $stylists->getStylistMatchedMail($mail);
+  //会員登録があればuserにはIDが入る
+  $user = $users->getUserMatchedMail($mail);
+
   $anser;
   //anserがtrueなら新規会員登録できる
-  if($stylist->isEmpty()){
+  if($stylist->isEmpty() && $user->isEmpty()){
     $anser = true;
   }else{
     //stylistに値が入っている場合は会員登録あり
@@ -731,6 +738,7 @@ public function confirmStylistRegister(Request $request){
     'inputs'=>$inputs,
     'anser'=>$anser,
     'stylist'=>$stylist,
+    'user'=>$user,
     'mail'=>$mail,
   ]);
 }
