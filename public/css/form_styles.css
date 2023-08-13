@@ -168,7 +168,7 @@ textarea:focus{
   outline: none;
 }
 .inp-width{
-  outline: none;  
+  outline: none;
 }
 @media screen and (max-width: 480px) {
   .Form-Item-Textarea {
@@ -302,4 +302,16 @@ button a{
 .return_top a:hover,
 .return_top a:focus{
   color: #ff9467;
+}
+.contact-text{
+  width: 100%;
+  border: none;
+  background-color: #fff;
+}
+.contact-text:hover,
+.contact-text:focus,
+.contact-text:active{
+  background-color: #fff;
+  border: none;
+  outline: none;
 }

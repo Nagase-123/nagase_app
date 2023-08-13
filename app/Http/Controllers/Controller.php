@@ -417,7 +417,7 @@ class Controller extends BaseController
         $email->setFrom("nagase3@hotmail.com", "chouette運営事務局");
         $email->setSubject("お問い合わせの件について");
         $email->addTo($results['mail'], $pax_name);
-        $email->addContent("text/plain",$results['textarea_box']);
+        $email->addContent("text/plain",$results['返信内容']);
         $sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
 
         $response = $sendgrid->send($email);
@@ -632,9 +632,27 @@ public function showInquiryDetail(Request $request){
   if($this->checkSession($request)){
     $contact = new Contact();
     $results = $contact->getInquiry($request);
+    $request->session()->put('results',$results);
+
     return view('admin.contact_detail',[
       'results'=>$results,
     ]);
+  }else{
+    return view('login_logout.login',[
+      'msg'=>'再度ログインして下さい',
+    ]);
+  }
+}
+
+/*お問合せ　返信バリデーションに引っかかった時*/
+public function inquiryAfterValidation(Request $request){
+  if($this->checkSession($request)){
+    $results = $request->session()->get('results');
+    if($results !== null){
+        return view('admin.contact_detail',[
+          'results'=>$results,
+        ]);
+    }
   }else{
     return view('login_logout.login',[
       'msg'=>'再度ログインして下さい',
@@ -646,6 +664,11 @@ public function showInquiryDetail(Request $request){
 *管理者　お問い合わせ　返信内容確認
 */
 public function confirmReplyDetail(Request $request){
+  //バリデーション
+  $request->validate([
+    '返信内容'=>'required|max:2000',
+  ]);
+
   $results = $request->all();
   return view('admin.reply_confirm',[
     'results'=>$results,
@@ -1070,12 +1093,12 @@ public function showLogoutComp(Request $request){
 *コンタクト　お問い合わせ確認
 */
 public function confirmInquiryDetail(Request $request){
-
+  //問い合わせのメアドは会員登録よりバリデーション厳しく設定
   $request->validate([
     '名前'=>'required|max:10',
     'フリガナ'=>'required|max:10|regex:/^[ァ-ヶー]+$/u',
     '電話番号'=>'nullable|digits_between:8,11',
-    'メール'=>'required|email',
+    'メール'=>'required|email:filter,dns',
     '本文'=>'required',
   ]);
   return view('contact.confirm',[
