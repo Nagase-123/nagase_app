@@ -38,7 +38,7 @@ if(isset($errors)){
 
 <div class="Form-Item">
   <p class="Form-Item-Label">お問合せ内容</p>
-    <textarea class="contact-text Form-Item-Label" readonly rows="5">{{$result->contact_text}}</textarea>
+    <textarea class="contact-text2 Form-Item-Label" readonly rows="5">{{$result->contact_text}}</textarea>
   </p>
 </div>
 @endforeach

@@ -309,9 +309,21 @@ button a{
   background-color: #fff;
   text-align: center;
 }
+.contact-text2{
+  width: 100%;
+  border: none;
+  background-color: #fff;
+}
 .contact-text:hover,
 .contact-text:focus,
 .contact-text:active{
+  background-color: #fff;
+  border: none;
+  outline: none;
+}
+.contact-text2:hover,
+.contact-text2:focus,
+.contact-text2:active{
   background-color: #fff;
   border: none;
   outline: none;
