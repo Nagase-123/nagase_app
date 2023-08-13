@@ -60,14 +60,6 @@
   .detail{
     margin-top: 3rem;
   }
-  @media screen and (max-width:480px) {
-    /*　画面サイズが480px以下はここを読み込む　*/
-    .td-btn:active{
-      background-color:#ff9467;
-      border: 1px solid #ff9467;
-      color:#fff;
-    }
-  }
   </style>
 </head>
 
