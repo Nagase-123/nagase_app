@@ -13,7 +13,7 @@ if($anser == '既に会員登録があります'){
 }
 @endphp
 
-@section('msg')
+@section('msg1')
 {{$anser}}<br>
 会員ページにログインの上ご利用ください</p>
 @endsection
