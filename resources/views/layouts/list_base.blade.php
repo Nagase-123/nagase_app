@@ -32,7 +32,8 @@
     margin: 0;
   }
   .td-btn:hover,
-  .td-btn:focus{
+  .td-btn:focus,
+  .td-btn:active{
     background-color:#ff9467;
     border: 1px solid #ff9467;
     color:#fff;
