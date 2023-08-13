@@ -60,28 +60,14 @@
   .detail{
     margin-top: 3rem;
   }
-@media screen and (max-width:480px) {
-  /*　画面サイズが480px以下はここを読み込む　*/
-  .td-btn:hover{
-    background-color:#705339;
-    border: 1px solid #705339;
-    color:#fff;
+  @media screen and (max-width:480px) {
+    /*　画面サイズが480px以下はここを読み込む　*/
+    .td-btn:active{
+      background-color:#ff9467;
+      border: 1px solid #ff9467;
+      color:#fff;
+    }
   }
-  .td-btn:active{
-    background-color:#ff9467;
-    border: 1px solid #ff9467;
-    color:#fff;
-  }
-}
-/*hoverが使えない機器を想定*/
-@media (hover: none) {
-  .td-btn:active{
-    background-color:#ff9467;
-    border: 1px solid #ff9467;
-    color:#fff;
-  }
-}
-
   </style>
 </head>
 
