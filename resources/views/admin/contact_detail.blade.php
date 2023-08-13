@@ -54,7 +54,7 @@ if(isset($errors)){
 
     <div class="Form-Item">
       <p class="Form-Item-Label isMsg">返信内容</p>
-      <textarea name="返信内容" id="textarea_box" class="Form-Item-Textarea" wrap="hard" required>{{ old('返信内容') }}</textarea>
+      <textarea name="返信内容" id="textarea_box" class="Form-Item-Textarea" required>{{ old('返信内容') }}</textarea>
     </div>
     @endforeach
     @endsection
