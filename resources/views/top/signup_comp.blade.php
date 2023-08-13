@@ -18,6 +18,6 @@ if($anser == '既に会員登録があります'){
 会員ページにログインの上ご利用ください</p>
 @endsection
 
-@section('link')
+@section('link1')
 <a href="{{ url('/login_logout/login')}}">ログインページ</a>
 @endsection
