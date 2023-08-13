@@ -307,6 +307,7 @@ button a{
   width: 100%;
   border: none;
   background-color: #fff;
+  text-align: center;
 }
 .contact-text:hover,
 .contact-text:focus,
