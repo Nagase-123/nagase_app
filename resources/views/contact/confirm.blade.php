@@ -28,7 +28,7 @@
     <p class="Form-Item-Label">電話番号</p>
     <input type="text" name="電話番号" id="tel" class="Form-Item-Input confirm-style" value="{{$request['電話番号'] }}" readonly tabindex="-1">
   </div>
-  
+
   <div class="Form-Item">
     <p class="Form-Item-Label">メールアドレス</p>
     <input type="email" name="メール" id="email" class="Form-Item-Input confirm-style" value="{{$request['メール'] }}" readonly tabindex="-1">
@@ -37,10 +37,8 @@
   <div class="Form-Item">
     <p class="Form-Item-Label isMsg">お問い合わせ内容</p>
     <textarea name="本文" id="textarea_box" class="Form-Item-Textarea confirm-style"
-    readonly tabindex="-1"> {!!nl2br(e($request['本文']))!!}</textarea>
+    readonly tabindex="-1"> {{ $request['本文'] }}</textarea>
   </div>
-
-  <input name="textarea_box" id="textarea_box" value="{!! nl2br(e($request['本文'])) !!}" type="hidden">
 
   <div class="center">
     <button type ="button" class="Form-Btn" id="return" onclick=history.back()>戻 る</button>

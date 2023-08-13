@@ -13,6 +13,17 @@
 
 @section('content')
 
+@php
+if(isset($errors)){
+  foreach($errors->all() as $error){
+    @endphp
+    <p class="error_msg"><span class="asterisk">*</span>{{$error}}</p>
+    @php
+  }
+}
+@endphp
+
+
 @foreach($results as $result)
 
 <div class="Form-Item">
@@ -27,10 +38,12 @@
 
 <div class="Form-Item">
   <p class="Form-Item-Label">お問合せ内容</p>
-  <p class="Form-Item-Label">{{$result->contact_text}}</p>
+    <textarea class="contact-text Form-Item-Label" readonly rows="5">{{$result->contact_text}}</textarea>
+  </p>
 </div>
-
 @endforeach
+
+@foreach($results as $result)
 
   <form method="post" action="/admin/reply_confirm">
     @csrf
@@ -41,9 +54,9 @@
 
     <div class="Form-Item">
       <p class="Form-Item-Label isMsg">返信内容</p>
-      <textarea name="textarea_box" id="textarea_box" class="Form-Item-Textarea" wrap="hard" required>{{ old('本文') }}</textarea>
+      <textarea name="返信内容" id="textarea_box" class="Form-Item-Textarea" wrap="hard" required>{{ old('返信内容') }}</textarea>
     </div>
-
+    @endforeach
     @endsection
 
     @section('button')

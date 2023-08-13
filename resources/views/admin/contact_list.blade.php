@@ -25,7 +25,9 @@
         <td data-label="フリガナ">{{$contact->user_kana}}サマ</td>
         <td data-label="メールアドレス">{{$contact->user_mail}}</td>
         <td data-label="電話番号">{{$contact->user_tel}}</td>
-        <td data-label="問い合わせ内容">{{$contact->contact_text}}</td>
+        <td data-label="問い合わせ内容">
+        <textarea class="contact-text" readonly rows="5">{{$contact->contact_text}}</textarea>
+        </td>
         @if($contact->contact_flg == '1')
         <td data-label="返信状況">返信完了</span></td>
         @else

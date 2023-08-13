@@ -77,6 +77,7 @@ Route::get('/admin/stylist_list',[Controller::class,'showStylistList']);
 Route::get('/admin/member_list',[Controller::class,'showUserList']);
 Route::get('/admin/contact_list',[Controller::class,'showInquiryList']);
 Route::post('/admin/contact_detail',[Controller::class,'showInquiryDetail']);
+Route::get('/admin/contact_detail',[Controller::class,'inquiryAfterValidation']);
 Route::post('/admin/reply_confirm',[Controller::class,'confirmReplyDetail']);
 
 /*トップ*/
