@@ -64,20 +64,15 @@
     header.masthead::before{
       background-color: #fff;
     }
-    /*吹き出しが左側にでる*/
-    .les_fukidashi_u{
-      left : -30%;
+    /*スマホでは吹き出しは非表示*/
+    .text:hover .fukidashi{
+    display: none;
     }
-    /*吹き出しが右側にでる*/
-    .les_fukidashi_s{
-      left : 20%;
-    }
-
   }
   </style>
 </head>
 
-<body>
+<body ontouchstart>
 
   <!-- Navigation-->
   <nav class="navbar navbar-light bg-light static-top">
