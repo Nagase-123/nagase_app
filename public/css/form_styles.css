@@ -164,7 +164,7 @@ textarea:focus{
   max-width: 410px;
   font-size: 18px;
 }
-.Form-Item-Textarea{
+.Form-Item-Textarea:hover{
   outline: none;
 }
 @media screen and (max-width: 480px) {
