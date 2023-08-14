@@ -2,6 +2,20 @@ body{
   color: #705339;
   font-family: 'Kaisei Decol', serif;
 }
+.px-4 {
+  padding-right: 1.5rem !important;
+  padding-left: 1.5rem !important;
+}
+.py-2 {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+}
+.border {
+  border: 1px solid #dee2e6 !important;
+}
+.link a{
+  color: #754f44;/*茶色*/
+}
 .link a:hover,
 .link a:focus {
   color:#ff9467;
@@ -273,6 +287,10 @@ button a{
 }
 .confirm-style {
   pointer-events: none;
+  background-color: transparent;
+}
+.confirm-text{
+  pointer-events: none;
 }
 .Form-Item-Login{
   margin-left: auto;
@@ -303,27 +321,27 @@ button a{
 .return_top a:focus{
   color: #ff9467;
 }
-.contact-text{
+.list-text{
   width: 100%;
   border: none;
   background-color: #fff;
   text-align: center;
 }
-.contact-text2{
+.list-text2{
   width: 100%;
   border: none;
   background-color: #fff;
 }
-.contact-text:hover,
-.contact-text:focus,
-.contact-text:active{
+.list-text:hover,
+.list-text:focus,
+.list-text:active{
   background-color: #fff;
   border: none;
   outline: none;
 }
-.contact-text2:hover,
-.contact-text2:focus,
-.contact-text2:active{
+.list-text2:hover,
+.list-text2:focus,
+.list-text2:active{
   background-color: #fff;
   border: none;
   outline: none;

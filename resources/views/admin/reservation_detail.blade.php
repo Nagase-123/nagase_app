@@ -51,7 +51,9 @@
     <td data-label="お子様カット">〇</td>
     @endif
 
-    <td data-label="コメント">{{$reservation->reservation_comment}}</td>
+    <td data-label="コメント">
+     <textarea class="list-text" readonly rows="3">{{$reservation->reservation_comment}}</textarea>
+    </td>
   </tr>
 </table>
 
@@ -74,7 +76,9 @@
     <td data-label="ユーザーフリガナ">{{$user->user_kana}}</td>
     <td data-label="ユーザー電話番号">{{$user->user_tel}}</td>
     <td data-label="ユーザー住所">{{$user->user_address}}</td>
-    <td data-label="顧客メモ">{{$user->user_memo}}</td>
+    <td data-label="顧客メモ">
+    <textarea class="list-text" readonly rows="3">{{$user->user_memo}}</textarea>
+    </td>
   </tr>
   @endforeach
 </table>
@@ -108,8 +112,7 @@
     @csrf
     <input type="hidden" name="comp_kinds" value="reservation_cancel_comp_admin">
 
-    <input name="cancel_msg" wrap="hard"
-    value="" type="text" class="inp-width" required>
+    <textarea name="cancel_msg" class="inp-width" required row="5" maxlength="500"></textarea>
 
     <input type="hidden" name="res_id" value="{{$reservation->reservation_id}}">
     <button type="submit" name="user_sb" id="del_bt" class ="Form-Btn" onclick="return alert_js()">キャンセル</button>

@@ -38,8 +38,7 @@
     @if ($errors->has('textarea_box'))
     <span class = "error_msg">{{$errors->first('textarea_box')}}</span>
     @endif
-    <input name="cancel_msg" wrap="hard"
-    value="" type="text" class="Form-Item-Input" required>
+    <textarea name="cancel_msg" class="Form-Item-Textarea" required row="3" maxlength="500"></textarea>
   </div>
 
   <br>

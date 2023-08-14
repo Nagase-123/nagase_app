@@ -66,7 +66,9 @@
       <td data-label="お子様カット">〇</td>
       @endif
 
-      <td data-label="コメント">{!! nl2br(e($result->reservation_comment)) !!}</td>
+      <td data-label="コメント">
+      <textarea class="list-text" readonly rows="3">{{ $result->reservation_comment }}</textarea>
+      </td>
       <td data-label="コメント変更">
         <form action ="/user/comment_change" method="post">
           @csrf

@@ -78,8 +78,7 @@
 
     <div class="Form-Item">
       <p class="Form-Item-Label">コメント</p>
-      {!! nl2br(e($inputs['メッセージ'])) !!}
-      <input type="hidden" name="msg" id="msg" value="{!! nl2br(e($inputs['メッセージ'])) !!}" wrap="hard">
+      <textarea class="Form-Item-Textarea confirm-style" name="msg" readonly>{{ $inputs['メッセージ'] }}</textarea>
     </div>
 
     @else

@@ -14,6 +14,7 @@
   <div class="Form-Item">
     <p class="Form-Item-Label">名前</p>
     <input type="text" name="name" id="name" class="Form-Item-Input confirm-style" value="{{$results['name']}}" readonly tabindex="-1">
+    様
   </div>
 
   <div class="Form-Item">
@@ -23,7 +24,7 @@
 
   <div class="Form-Item">
     <p class="Form-Item-Label">本文</p>
-    <textarea name="返信内容" class="Form-Item-Textarea confirm-style" readonly tabindex="-1"> {{$results['返信内容']}}</textarea>
+    <textarea name="返信内容" class="Form-Item-Textarea confirm-text" readonly tabindex="-1">{{$results['返信内容']}}</textarea>
   </div>
 
   <input type="hidden" name="contact_id" id="contact_id" value="{{$results['contact_id']}}">

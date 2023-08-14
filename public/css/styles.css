@@ -11252,3 +11252,28 @@ table{
   padding-top: 20px;
   margin:0 auto;
 }
+.transparent{
+  color: transparent;
+}
+/*今のところstylist_homeのみ
+他はform_styleの方*/
+.list-text-home{
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  text-align: center;
+  color: #fff;
+}
+.list-text-home:hover,
+.list-text-home:focus,
+.list-text-home:active{
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+}
+@media screen and (max-width: 480px){
+  .list-text-home{
+    color: #705339;/*茶色*/
+  }
+}
