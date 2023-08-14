@@ -907,8 +907,9 @@ public function confirmPossibleToLogin(Request $request){
 *ログイン関連 resert_request　パスワードリセット
 */
 public function sendEmailReset(Request $request){
+  //メールのバリデーション厳しめに
   $request->validate([
-    'メール'=>'required|max:50',
+    'メール'=>'required|max:50|email:filter,dns',
     '名前'=>'required|max:10',
   ]);
   $data = [ ];
