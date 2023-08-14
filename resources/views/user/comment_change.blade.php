@@ -31,8 +31,7 @@
 
     <div class="Form-Item">
       <p class="Form-Item-Label">コメント</p>
-      <input name="comment" id="textarea_box" wrap="hard"
-      value="{{$result->reservation_comment}}" type="text" class="Form-Item-Input">
+      <textarea name="comment" class="Form-Item-Textarea" id="textarea_box" row="3" maxlength="500">{{$result->reservation_comment}}</textarea>
       <input name="res_id" type="hidden" value="{{$result->reservation_id}}">
     </div>
 

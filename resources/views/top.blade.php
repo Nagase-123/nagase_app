@@ -114,7 +114,7 @@
                   <div class="col-lg-6 order-lg-1 my-auto showcase-text animation">
                     <h2 class="caption-msg">Menue</h2>
                     <p class="lead mb-0">
-                      ヘアカット　　　  5,000円<br>
+                      <span class="transparent">※</span>ヘアカット　　　  5,000円<br>
                       ※ヘアセット追加　  3,000円<br>
                       ※お子様カット　　  1,000円<br>
                       ※シャンプー追加　  1,000円<br>

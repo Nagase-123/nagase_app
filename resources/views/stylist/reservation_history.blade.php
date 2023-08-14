@@ -52,7 +52,9 @@
     <td data-label="お子様カット">〇</td>
     @endif
 
-    <td data-label="コメント">{{$reservation->reservation_comment}}</td>
+    <td data-label="コメント">
+    <textarea class="list-text" readonly rows="3">{{ $reservation->reservation_comment }}</textarea>
+    </td>
     <form method="post" action="/stylist/user_memo">
       @csrf
       <input type="hidden" name="user" value="{{$reservation->user_id}}">

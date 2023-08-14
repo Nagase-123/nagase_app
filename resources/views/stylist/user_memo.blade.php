@@ -4,6 +4,12 @@
 顧客情報・メモ編集
 @endsection
 
+@section('msg1')
+顧客メモの更新をご希望の場合は、
+ご入力の上送信ボタンを押してください
+@endsection
+
+
 @section('form')
 <form method="post" action="/stylist/stylist_comp">
   @csrf
@@ -43,8 +49,7 @@
       <span class = "error_msg">{{$errors->first('textarea_box')}}</span>
       @endif
       <p class="Form-Item-Label">顧客メモ</p>
-      <input name="memo" id="textarea_box" wrap="hard"
-      value="{{$user->user_memo}}" type="text" class="Form-Item-Input">
+      <textarea name="memo" class="Form-Item-Textarea" id="textarea_box" row="3" maxlength="300">{{$user->user_memo}}</textarea>
     </div>
 
     <div class="center">
