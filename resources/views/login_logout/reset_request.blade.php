@@ -45,15 +45,11 @@
 
     <script type="text/javascript">
     //送信ボタンを押した際に送信ボタンを無効化する（連打による多数送信回避）
-/*    $(function(){
+    $(function(){
       $('[type="submit"]').click(function(){
         $(this).prop('disabled',true);//ボタンを無効化する
         $(this).closest('form').submit();//フォームを送信する
       });
-    });
-*/
-    $('#double').on('click',function(){
-      $(this).css('pointer-events','none');
     });
     </script>
     @endsection
