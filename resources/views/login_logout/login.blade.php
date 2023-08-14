@@ -14,11 +14,11 @@
   @endif
 
   <div class="Form-Item">
-  <input type="text" name="mail" id="mail" class="Form-Item-Input Form-Item-Login" value="{{old('mail')}}" required placeholder="メールアドレス">
+  <input type="text" name="mail" id="mail" class="Form-Item-Input Form-Item-Login" value="{{ old('mail') }}" required placeholder="メールアドレス">
   </div>
 
   <div class="Form-Item">
-  <input type="password" name="pass" id="pass" class="Form-Item-Input Form-Item-Login" value="{{old('pass')}}" required placeholder="パスワード">
+  <input type="password" name="pass" id="pass" class="Form-Item-Input Form-Item-Login" value="{{ old('pass') }}" required placeholder="パスワード">
   </div>
 
   <div class="center">
