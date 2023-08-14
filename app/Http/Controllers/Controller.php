@@ -226,7 +226,7 @@ class Controller extends BaseController
           '名前'=>'required|max:10',
           'フリガナ'=>'required|max:10|regex:/^[ァ-ヶー]+$/u',
           '電話番号'=>'nullable|digits_between:8,11',
-          'メール'=>'required|email',
+          'メール'=>'required|email|max:50',
           '住所'=>'required|max:50',
           '得意スタイル'=>'required|max:90',
           '自己紹介'=>'required|max:300',
@@ -695,7 +695,7 @@ public function confirmUserRegister(Request $request){
     '名前'=>'required|max:10',
     'フリガナ'=>'required|max:10|regex:/^[ァ-ヶー]+$/u',
     '電話番号'=>'nullable|numeric|digits_between:8,11',
-    'メール'=>'required|email',
+    'メール'=>'required|email|max:50',
     '住所'=>'required|max:50',
     'password'=>'confirmed:password,required|min:10|max:20',
   ]);
@@ -738,7 +738,7 @@ public function confirmStylistRegister(Request $request){
     '名前'=>'required|max:10',
     'フリガナ'=>'required|max:10|regex:/^[ァ-ヶー]+$/u',
     '電話番号'=>'nullable|digits_between:8,11',
-    'メール'=>'required|email',
+    'メール'=>'required|email|max:50',
     '住所'=>'required|max:50',
     'password'=>'confirmed:password,required|min:10|max:20',
     '得意スタイル'=>'required|max:90',
@@ -908,8 +908,8 @@ public function confirmPossibleToLogin(Request $request){
 */
 public function sendEmailReset(Request $request){
   $request->validate([
-    'メール'=>'required',
-    '名前'=>'required',
+    'メール'=>'required|max:50',
+    '名前'=>'required|max:10',
   ]);
   $data = [ ];
   $pax_name = $request['名前']."様";
@@ -1106,8 +1106,8 @@ public function confirmInquiryDetail(Request $request){
     '名前'=>'required|max:10',
     'フリガナ'=>'required|max:10|regex:/^[ァ-ヶー]+$/u',
     '電話番号'=>'nullable|digits_between:8,11',
-    'メール'=>'required|email:filter,dns',
-    '本文'=>'required',
+    'メール'=>'required|max:50|email:filter,dns',
+    '本文'=>'required|max:2000',
   ]);
   return view('contact.confirm',[
     'request'=>$request,
@@ -1357,7 +1357,7 @@ public function showUserComp(Request $request){
         '名前'=>'required|max:10',
         'フリガナ'=>'required|max:10|regex:/^[ァ-ヶー]+$/u',
         '電話番号'=>'nullable|digits_between:8,11',
-        'メール'=>'required|email',
+        'メール'=>'required|email|max:50',
         '住所'=>'required|max:50',
       ]);
       //美容師側に同じアドレスが存在しないかチェック
