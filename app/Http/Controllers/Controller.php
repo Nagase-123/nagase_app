@@ -324,9 +324,14 @@ class Controller extends BaseController
         $stylist_id = $request->session()->get('stylist_id');
         $comp_title ="顧客メモ更新完了";
         $comp_msg1 = "顧客メモの更新が完了しました。";
-        $url = "/stylist/reservation_history";
-        $link_name = "予約履歴一覧へ";
 
+        if($flg == 10){
+          $url = "/admin/member_list";
+          $link_name = "会員一覧へ";
+        }else{
+          $url = "/stylist/reservation_history";
+          $link_name = "予約履歴一覧へ";
+        }
         break;
       }
       //管理者

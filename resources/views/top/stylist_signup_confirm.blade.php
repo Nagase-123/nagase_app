@@ -57,7 +57,7 @@ if($anser == true){
 
     <div class="Form-Item">
       <p class="Form-Item-Label">自己紹介</p>
-      <textarea class="Form-Item-Textarea confirm-style" name="自己紹介" id="profile" wrap="hard" readonly tabindex="-1">{{ $inputs['自己紹介'] }}</textarea>
+      <textarea class="Form-Item-Textarea confirm-text" name="自己紹介" id="profile" wrap="hard" readonly tabindex="-1">{{ $inputs['自己紹介'] }}</textarea>
     </div>
 
     <div class="center">
