@@ -834,13 +834,13 @@ public function showStylistRegister(Request $request){
 */
 public function confirmPossibleToLogin(Request $request){
   $request->validate([
-    'mail'=>'required|max:50',
-    'pass'=>'required|max:20',
+    'メール'=>'required|max:50',
+    'パスワード'=>'required|min:10|max:20',
   ]);
 
   //DBに存在するかを確認する必要があり
-  $mail = $request['mail'];
-  $pass = $request['pass'];
+  $mail = $request['メール'];
+  $pass = $request['パスワード'];
 
   $user = new User();
   //resultには会員フラグが格納されている
@@ -1040,13 +1040,13 @@ public function showPasswordResetComp(Request $request){
 */
 public function stylistConfirmPossibleToLogin(Request $request){
   $request->validate([
-    'mail'=>'required|max:50',
-    'pass'=>'required|max:20',
+    'メール'=>'required|max:50',
+    'パスワード'=>'required|min:10|max:20',
   ]);
 
   //DBに存在するかを確認する必要があり
-  $mail = $request['mail'];
-  $pass = $request['pass'];
+  $mail = $request['メール'];
+  $pass = $request['パスワード'];
 
   $request->session()->put('mail',$mail);
 
