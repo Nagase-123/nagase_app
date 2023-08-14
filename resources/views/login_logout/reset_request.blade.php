@@ -12,7 +12,7 @@
   @endsection
 
   @section('msg2')
-  <span class="error_msg">※苗字と名前の間にスペースは不要です</span>
+  ※苗字と名前の間にスペースは不要です
   @endsection
 
   @section('content')
@@ -29,12 +29,12 @@
 
   <div class="Form-Item">
     <p class="Form-Item-Label">メールアドレス</p>
-    <input type="text" name="メール" id="mail" class="Form-Item-Input" value="{{old('mail')}}" required placeholder="例）example@gmail.com">
+    <input type="text" name="メール" id="mail" class="Form-Item-Input" value="{{old('メール')}}" required placeholder="例）example@gmail.com">
   </div>
 
   <div class="Form-Item">
     <p class="Form-Item-Label">お名前</p>
-    <input type="text" name="名前" id="name" class="Form-Item-Input" value="{{old('name')}}" required placeholder="例）山田太郎">
+    <input type="text" name="名前" id="name" class="Form-Item-Input" value="{{old('名前')}}" required placeholder="例）山田太郎">
   </div>
 
   <div class="center">
