@@ -21,7 +21,13 @@
     <td data-label="メール">{{$user->user_mail}}</td>
     <td data-label="電話">{{$user->user_tel}}</td>
     <td data-label="住所">{{$user->user_address}}</td>
-    <td data-label="顧客メモ">{{$user->user_memo}}</td>
+    <td data-label="顧客メモ">
+      <form method="post" action="/stylist/user_memo">
+        @csrf
+        <input type="hidden" name="user" value="{{$user->user_id}}">
+        <button type="submit" name="user_sb" class="td-btn">顧客メモ</button>
+        </form>
+    </td>
 
     <td data-label="予約履歴">
       <form action ="/user/reservation_history" method="get">
