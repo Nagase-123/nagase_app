@@ -231,10 +231,18 @@ class Controller extends BaseController
           '得意スタイル'=>'required|max:90',
           '自己紹介'=>'required|max:300',
         ]);
-        $update_anser = $stylist->updateStylistProfile($inputs);
+        //ユーザー側に同じアドレスが存在しないかチェック
+        $users = new User();
+        $user = $users->getUserMatchedMail($inputs['メール']);
+        if($user->isEmpty()){
+          //プロフィール変更
+          $update_anser = $stylist->updateStylistProfile($inputs);
+        }else{
+          //ユーザー側に同じアドレスが存在する
+          $update_anser =false;
+        }
 
         if($update_anser){
-
           $comp_title = "プロフィール編集完了";
           $comp_msg1=" プロフィール編集が完了しました。";
         }else{
@@ -1352,8 +1360,16 @@ public function showUserComp(Request $request){
         'メール'=>'required|email',
         '住所'=>'required|max:50',
       ]);
-      //会員情報変更
-      $update_anser = $users->updateUserProfile($inputs);
+      //美容師側に同じアドレスが存在しないかチェック
+      $stylists = new Hairstylist();
+      $stylist = $stylists->getStylistMatchedMail($inputs['メール']);
+      if($stylist->isEmpty()){
+        //会員情報変更
+        $update_anser = $users->updateUserProfile($inputs);
+      }else{
+        //美容師側に同じアドレスが存在する為ＮＧ
+        $update_anser = false;
+      }
 
       if($update_anser){
         $comp_title = '会員情報変更完了';
