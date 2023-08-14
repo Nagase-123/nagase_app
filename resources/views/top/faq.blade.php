@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
 	<meta content="width=device-width; initial-scale=1.0" name="viewport">
 	<meta NAME="ROBOTS" CONTENT="NOINDEX,NOFOLLOW,NOARCHIVE">
+	<title>chouette</title>
 	<link href="{{ asset('css/style2.css') }}" rel="stylesheet">
 	<link rel="shortcut icon" href="images/favicon.ico" type="image/vnd.microsoft.icon">
 	<link rel="icon" href="images/favicon.ico" type="image/vnd.microsoft.icon">
@@ -45,7 +46,7 @@
 				<dt id="menue">カットにかかる料金を教えてください</dt>
 				<dd>　（1）ヘアカット　　　 5,000円<br>
 					※（2）ヘアセット追加　 3,000円<br>
-					※（3）お子様カット　　1,000円<br>
+					※（3）お子様カット　　 1,000円<br>
 					※（4）シャンプー追加　 1,000円<br>
 					<br>
 					※（2）（3）（4）のメニューにつきましては、単体でのご予約は不可となります。<br>
