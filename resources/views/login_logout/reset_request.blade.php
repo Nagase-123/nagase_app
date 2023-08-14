@@ -39,17 +39,21 @@
 
   <div class="center">
     <button type ="button" class="Form-Btn" id="return" onclick=history.back()>戻 る</button>
-    <button type="submit" class="Form-Btn" onclick="return alert_js()">送信</button>
+    <button type="submit" class="Form-Btn" id="double">送信</button>
     <div>
     </form>
 
     <script type="text/javascript">
     //送信ボタンを押した際に送信ボタンを無効化する（連打による多数送信回避）
-    $(function(){
+/*    $(function(){
       $('[type="submit"]').click(function(){
         $(this).prop('disabled',true);//ボタンを無効化する
         $(this).closest('form').submit();//フォームを送信する
       });
+    });
+*/
+    $('#double').on('click',function(){
+      $(this).css('pointer-events','none');
     });
     </script>
     @endsection
