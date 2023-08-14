@@ -13,12 +13,22 @@
   <p class="error_msg text-center">※{{$msg}}</p>
   @endif
 
+  @php
+  if(isset($errors)){
+    foreach($errors->all() as $error){
+      @endphp
+      <p class="error_msg text-center"><span class="asterisk">*</span>{{$error}}</p>
+      @php
+    }
+  }
+  @endphp
+
   <div class="Form-Item">
-  <input type="text" name="mail" id="mail" class="Form-Item-Input Form-Item-Login" value="{{ old('mail') }}" required placeholder="メールアドレス">
+  <input type="text" name="メール" id="mail" class="Form-Item-Input Form-Item-Login" value="{{ old('メール') }}" required placeholder="メールアドレス">
   </div>
 
   <div class="Form-Item">
-  <input type="password" name="pass" id="pass" class="Form-Item-Input Form-Item-Login" value="{{ old('pass') }}" required placeholder="パスワード">
+  <input type="password" name="パスワード" id="pass" class="Form-Item-Input Form-Item-Login" value="{{ old('パスワード') }}" required placeholder="パスワード">
   </div>
 
   <div class="center">
