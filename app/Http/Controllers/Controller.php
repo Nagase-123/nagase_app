@@ -225,7 +225,7 @@ class Controller extends BaseController
         $request->validate([
           '名前'=>'required|max:10',
           'フリガナ'=>'required|max:10|regex:/^[ァ-ヶー]+$/u',
-          '電話番号'=>'nullable|digits_between:8,11',
+          '電話番号'=>'required|numeric|digits_between:8,11',
           'メール'=>'required|email|max:50',
           '住所'=>'required|max:50',
           '得意スタイル'=>'required|max:90',
@@ -699,7 +699,7 @@ public function confirmUserRegister(Request $request){
   $request->validate([
     '名前'=>'required|max:10',
     'フリガナ'=>'required|max:10|regex:/^[ァ-ヶー]+$/u',
-    '電話番号'=>'nullable|numeric|digits_between:8,11',
+    '電話番号'=>'required|numeric|digits_between:8,11',
     'メール'=>'required|email|max:50',
     '住所'=>'required|max:50',
     'password'=>'confirmed:password,required|min:10|max:20',
@@ -742,7 +742,7 @@ public function confirmStylistRegister(Request $request){
   $request->validate([
     '名前'=>'required|max:10',
     'フリガナ'=>'required|max:10|regex:/^[ァ-ヶー]+$/u',
-    '電話番号'=>'nullable|digits_between:8,11',
+    '電話番号'=>'required|numeric|digits_between:8,11',
     'メール'=>'required|email|max:50',
     '住所'=>'required|max:50',
     'password'=>'confirmed:password,required|min:10|max:20',
@@ -1111,7 +1111,7 @@ public function confirmInquiryDetail(Request $request){
   $request->validate([
     '名前'=>'required|max:10',
     'フリガナ'=>'required|max:10|regex:/^[ァ-ヶー]+$/u',
-    '電話番号'=>'nullable|digits_between:8,11',
+    '電話番号'=>'nullable|numeric|digits_between:8,11',
     'メール'=>'required|max:50|email:filter,dns',
     '本文'=>'required|max:2000',
   ]);
@@ -1362,7 +1362,7 @@ public function showUserComp(Request $request){
       $request->validate([
         '名前'=>'required|max:10',
         'フリガナ'=>'required|max:10|regex:/^[ァ-ヶー]+$/u',
-        '電話番号'=>'nullable|digits_between:8,11',
+        '電話番号'=>'required|numeric|digits_between:8,11',
         'メール'=>'required|email|max:50',
         '住所'=>'required|max:50',
       ]);

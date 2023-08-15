@@ -37,6 +37,7 @@ input[type="email"],
 input[type="password"] {
   background-color: #fdf8db;/*薄い肌色*/
   color: #705339;
+  font-family: inherit;
 }
 input[type="text"]:focus,
 input[type="email"]:focus,
@@ -49,6 +50,7 @@ textarea{
   background-color: #fdf8db;
   border: 1px solid #705339;
   color: #705339;
+  font-family: inherit;
 }
 textarea:hover,
 textarea:focus{
@@ -130,6 +132,10 @@ textarea:focus{
   color: #fff;
   font-size: 14px;
 }
+.Form-Required{
+  color: #ff9467;
+}
+
 @media screen and (max-width: 480px) {
   .Form-Item-Label-Required {
     border-radius: 4px;
@@ -177,6 +183,7 @@ textarea:focus{
   width: 100%;
   max-width: 410px;
   font-size: 18px;
+  font-family: inherit;
 }
 .Form-Item-Textarea:hover{
   outline: none;
@@ -287,7 +294,6 @@ button a{
 }
 .confirm-style {
   pointer-events: none;
-  background-color: transparent;
 }
 .confirm-text{
   pointer-events: none;

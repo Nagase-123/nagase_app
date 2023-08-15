@@ -14,7 +14,7 @@ class User extends Authenticatable
   /**
   * The attributes that are mass assignable.
   *
-  * @var array<int, string>
+  * @var <int, string>
   */
   protected $fillable = [
     'name',
@@ -48,17 +48,11 @@ class User extends Authenticatable
   */
   public function userRegister($inputs){
     $user = new User();
-    $tel;
     $pass = $inputs['password'];
-    if(isset($inputs['tel'])){
-      $tel = $inputs['tel'];
-    }else{
-      $tel = '00000000000';
-    }
 
     $user->user_name = $inputs['name'];
     $user->user_kana = $inputs['kana'];
-    $user->user_tel = $tel;
+    $user->user_tel = $inputs['tel'];
     $user->user_mail = $inputs['mail'];
     $user->user_address = $inputs['address'];
     $user->password = Hash::make($pass);
@@ -159,12 +153,6 @@ class User extends Authenticatable
     //変更者のメールアドレスがDBに存在するならusersに値が入る
     $users = User::where($cond_mail)->get();
 
-    $tel;
-    if(isset($inputs['電話番号'])){
-      $tel = $inputs['電話番号'];
-    }else{
-      $tel = '00000000000';
-    }
     //コレクションなどの判定にはisset()使えない
     if($users->isNotEmpty()){
       foreach($users as $user){
@@ -174,7 +162,7 @@ class User extends Authenticatable
             'user_name'=>$inputs['名前'],
             'user_kana'=>$inputs['フリガナ'],
             'user_mail'=>$inputs['メール'],
-            'user_tel'=>$tel,
+            'user_tel'=>$inputs['電話番号'],
             'user_address'=>$inputs['住所'],
           ]);
           return true;
@@ -187,7 +175,7 @@ class User extends Authenticatable
         'user_name'=>$inputs['名前'],
         'user_kana'=>$inputs['フリガナ'],
         'user_mail'=>$inputs['メール'],
-        'user_tel'=>$tel,
+        'user_tel'=>$inputs['電話番号'],
         'user_address'=>$inputs['住所'],
       ]);
       return true;

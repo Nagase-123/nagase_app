@@ -37,7 +37,7 @@ if(isset($errors)){
   @endsection
 
   @section('tel')
-  <input type="text" name="電話番号" id="tel" class="Form-Item-Input" value="{{$result->user_tel}}" placeholder="例）09012345678">
+  <input type="text" name="電話番号" id="tel" class="Form-Item-Input" value="{{$result->user_tel}}" required placeholder="例）09012345678">
   @endsection
 
   @section('mail')

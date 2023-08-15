@@ -1,7 +1,5 @@
 <!--
 このテンプレートの利用ファイル
-stylist_signup
-signup　
 contact　
 -->
 <!DOCTYPE html>
