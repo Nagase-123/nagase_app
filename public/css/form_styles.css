@@ -352,3 +352,6 @@ button a{
   border: none;
   outline: none;
 }
+.transparent{
+  background-color: transparent;
+}

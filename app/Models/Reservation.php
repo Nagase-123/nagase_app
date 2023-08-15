@@ -152,4 +152,18 @@ class Reservation extends Model
     return $anser;
   }
 
+  /*使わない*/
+  /*美容師会員削除をされた場合、予約も全て強制キャンセルする*/
+  public function reservationAllCancel($stylist_id){
+    $cond_id = ['hairstylist_id' => $stylist_id];
+    $today = date('Y-m-d'); //今日の日付を取得
+    $cancel_msg = '会員削除の為キャンセル';
+
+    Reservation::where('reservation_date','>',$today)->where($cond_id)->update([
+      'cancel_message'=>$cancel_msg,
+      'reservation_flg'=>'1',
+    ]);
+  }
+
+
 }//クラス

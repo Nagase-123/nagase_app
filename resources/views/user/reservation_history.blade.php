@@ -69,11 +69,7 @@
 
       <td data-label="コメント">
       <textarea class="list-text" readonly rows="2">{{ $result->reservation_comment }}</textarea>
-{{--      </td>
-      <td data-label="コメント変更">
-        <form action ="/user/comment_change" method="post">
-          @csrf
---}}
+
           @php
           $date = strtotime($result->reservation_date);
           $now = strtotime(date('Y-m-d'));

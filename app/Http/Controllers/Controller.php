@@ -486,9 +486,18 @@ class Controller extends BaseController
       */
       case 'stylist_delete_comp':
       $stylist_id = $results['stylist_id'];
-      $stylist->removeStylistLogical($stylist_id);
-      $comp_title = "会員削除完了";
-      $comp_msg1 = "美容師会員の削除が完了しました。";
+      //生きている予約があれば$stylist_reservationに格納
+      $stylist_reservation = $reservation->getReservationEveryStylist($stylist_id);
+
+      if($stylist_reservation->isEmpty()){
+        $stylist->removeStylistLogical($stylist_id);
+        $comp_title = "会員削除完了";
+        $comp_msg1 = "美容師会員の削除が完了しました。";
+      }else{
+        $comp_title = '会員削除失敗';
+        $comp_msg1 = '会員削除に失敗しました。';
+        $comp_msg2 = '予約がある場合は予約をキャンセルする必要があります。';
+      }
       $url="/admin/stylist_list";
       $link_name="美容師一覧";
       break;
