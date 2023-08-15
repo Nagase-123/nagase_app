@@ -17,7 +17,7 @@
           <form method="post" action="/stylist/user_memo">
             @csrf
 
-            <h1 class="mb-5 heading-msg">直近予約一覧</h1>
+            <h1 class="mb-5 heading-msg">本日の予約一覧</h1>
             <table class="tb01">
               <tr class="head">
                 <th>ID</th>
@@ -40,7 +40,7 @@
                 $today = $time->format('Y-m-d');
                 ?>
                 @foreach($reservations as $reservation)
-                @if($reservation->reservation_date >= $today && $reservation->reservation_flg == 0)
+                @if($reservation->reservation_date == $today && $reservation->reservation_flg == 0)
                 <td data-label="予約番号">{{$reservation->reservation_id}}</td>
                 <td data-label="予約日">{{date('m/d', strtotime($reservation->reservation_date))}}</td>
                 <td data-label="予約時間">{{date('H:i', strtotime($reservation->reservation_time))}}</td>

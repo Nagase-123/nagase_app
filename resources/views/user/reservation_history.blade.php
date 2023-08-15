@@ -107,7 +107,11 @@
 
           @php
           $date = strtotime($result->reservation_date);
+          $dateTime = date('H:i', strtotime($result->reservation_time));
+
+          $nowTime = date('H:i');
           $now = strtotime(date('Y-m-d'));
+
           if($now < $date){
             if($result->reservation_flg =='0'){
               @endphp
@@ -121,6 +125,16 @@
 
               <p class="msg_cxl">キャンセル済み</p>
               @php
+            }
+          }else if($now == $date){
+            if($nowTime < $dateTime){
+            @endphp
+            <input type="hidden" name="res_id" value="{{$result->reservation_id}}">
+            <h6>予約中</h6>
+            <button type="submit" class="td-btn" name="delete_id" onclick="return alert_js()" value="">キャンセル</button>
+            @php
+            }else{
+              echo '施術済み';
             }
           }else{
             echo '施術済み';
