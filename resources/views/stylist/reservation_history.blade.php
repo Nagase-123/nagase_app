@@ -83,6 +83,7 @@
           @csrf
           <input type="hidden" name="user_id" value="{{$reservation->user_id}}">
           <input type="hidden" name="res_id" value="{{$reservation->reservation_id}}">
+          <input type="hidden" name="stylist_id" value="{{$reservation->hairstylist_id}}">
           <td data-label="ステータス"><h6>予約中</h6><button type="submit" class="td-btn">キャンセル</td>
           </form>
           <!--当日の予約-->
@@ -94,6 +95,7 @@
               @csrf
               <input type="hidden" name="user_id" value="{{$reservation->user_id}}">
               <input type="hidden" name="res_id" value="{{$reservation->reservation_id}}">
+              <input type="hidden" name="stylist_id" value="{{$reservation->hairstylist_id}}">
               <td data-label="ステータス"><h6>予約中</h6><button type="submit" class="td-btn">キャンセル</td>
               </form>
               @php
