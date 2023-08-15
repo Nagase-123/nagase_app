@@ -42,14 +42,10 @@
                 @foreach($reservations as $reservation)
 
                 @php
-                $time = new DateTime();
-                $today = $time->format('Y-m-d');
-
                 $dateTime = date('H:i', strtotime($reservation->reservation_time));
                 $nowTime = date('H:i');
                 @endphp
 
-                @if($reservation->reservation_date == $today)
                 <td data-label="予約番号">{{$reservation->reservation_id}}</td>
                 <td data-label="予約日">{{date('m/d', strtotime($reservation->reservation_date))}}</td>
                 <td data-label="予約時間">{{date('H:i', strtotime($reservation->reservation_time))}}</td>
@@ -106,7 +102,6 @@
                   <td data-label="ステータス">キャンセル不可</td>
                   @endif
                   </tr>
-                  @endif
                   @endforeach
                 </table>
                 @endif

@@ -84,6 +84,18 @@ class Reservation extends Model
   }
 
   /*
+  *美容師毎の予約を取得する(当日)
+  */
+  public function getTodayReservationEveryStylist($stylist_id){
+    $cond_id = ['hairstylist_id' => $stylist_id];
+    $flg_check = ['reservation_flg' => 0];
+    $now = date('Y-m-d');
+    $cond_day = ['reservation_date' => $now];
+    $reservation = Reservation::orderBy('reservation_date','desc')->orderBy('reservation_time','desc')->where($cond_id)->where($cond_day)->where($flg_check)->SimplePaginate(5);
+    return $reservation;
+  }
+
+  /*
   *キャンセルされたら　キャンセル理由を更新
   */
   public function cancelReservation($inputs){
