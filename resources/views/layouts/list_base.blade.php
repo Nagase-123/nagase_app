@@ -1,3 +1,16 @@
+<!--利用ファイル
+<admin>
+contact_list
+member_list
+reservation_detail
+stylist_list
+<stylist>
+reservation_history
+schedule_add
+schedule_list
+<user>
+reservation_history
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
