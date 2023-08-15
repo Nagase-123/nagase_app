@@ -298,6 +298,18 @@ button a{
 .confirm-text{
   pointer-events: none;
 }
+/*問い合わせ返信時のtextarea
+イベント無効にすると返信が長文の時スクロールできない
+*/
+.reply-text{
+  background-color: #fdf8db;
+}
+.reply-text:hover,
+.reply-text:focus{
+  border: none;
+  outline: none;
+  background-color: #fdf8db;
+}
 .Form-Item-Login{
   margin-left: auto;
   margin-right: auto;
