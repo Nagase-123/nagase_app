@@ -38,6 +38,7 @@ user_profile_edit
     <h2 class="">@yield('title')</h2>
 
     <p>@yield('msg1')</p>
+    <p><span class="Form-Required" style="font-weight:bold">＊</span>は必須項目です</p>
 
     @yield('error')
 
@@ -46,22 +47,22 @@ user_profile_edit
     @yield('id')
 
     <div class="Form-Item">
-      <p class="Form-Item-Label"><span class="Form-Item-Label-Required">必須</span>氏名</p>
+      <p class="Form-Item-Label"><span class="Form-Required">＊</span>氏名</p>
       @yield('name')
     </div>
 
     <div class="Form-Item">
-      <p class="Form-Item-Label"><span class="Form-Item-Label-Required">必須</span>フリガナ</p>
+      <p class="Form-Item-Label"><span class="Form-Required">＊</span>フリガナ</p>
       @yield('kana')
     </div>
 
     <div class="Form-Item">
-      <p class="Form-Item-Label">電話番号</p>
+      <p class="Form-Item-Label"><span class="Form-Required">＊</span>電話番号</p>
       @yield('tel')
     </div>
 
     <div class="Form-Item">
-      <p class="Form-Item-Label"><span class="Form-Item-Label-Required">必須</span>メールアドレス</p>
+      <p class="Form-Item-Label"><span class="Form-Required">＊</span>メールアドレス</p>
       @yield('mail')
     </div>
 
@@ -75,7 +76,7 @@ user_profile_edit
     </div>
 
     <div class="Form-Item">
-      <p class="Form-Item-Label"><span class="Form-Item-Label-Required">必須</span>住所</p>
+      <p class="Form-Item-Label"><span class="Form-Required">＊</span>住所</p>
       @yield('address')
     </div>
 

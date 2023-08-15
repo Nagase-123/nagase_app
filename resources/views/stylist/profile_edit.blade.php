@@ -38,7 +38,7 @@ if(isset($errors)){
   @endsection
 
   @section('tel')
-  <input type="text" name="電話番号" id="tel" class="Form-Item-Input" value="{{$stylist->hairstylist_tel }}" placeholder="例）09012345678">
+  <input type="text" name="電話番号" id="tel" class="Form-Item-Input" value="{{$stylist->hairstylist_tel }}" required placeholder="例）09012345678">
   @endsection
 
   @section('mail')
@@ -51,7 +51,7 @@ if(isset($errors)){
 
   @section('advantage')
   <div class="Form-Item">
-    <p class="Form-Item-Label"><span class="Form-Item-Label-Required">必須</span>得意スタイル</p>
+    <p class="Form-Item-Label"><span class="Form-Required">＊</span>得意スタイル</p>
     <input type="text" name="得意スタイル" id="advantage" class="Form-Item-Input"
     value="{{$stylist->hairstylist_advantage }}" placeholder="例）ショートカットが得意です" required>
   </div>
@@ -59,7 +59,7 @@ if(isset($errors)){
 
   @section('textarea')
   <div class="Form-Item">
-    <p class="Form-Item-Label"><span class="Form-Item-Label-Required">必須</span>自己紹介</p>
+    <p class="Form-Item-Label"><span class="Form-Required">＊</span>自己紹介</p>
     <textarea name="自己紹介" id="profile" class="Form-Item-Textarea" required>{{$stylist->hairstylist_profile}}</textarea>
   </div>
   @endsection

@@ -20,18 +20,11 @@ class Hairstylist extends Model
   public function stylistRegister($inputs){
     $stylist = new Hairstylist();
 
-    $tel;
-    if(isset($inputs['電話番号'])){
-      $tel = $inputs['電話番号'];
-    }else{
-      $tel = '00000000000';
-    }
-
     $pass = $inputs['password'];
 
     $stylist->hairstylist_name = $inputs['名前'];
     $stylist->hairstylist_kana = $inputs['フリガナ'];
-    $stylist->hairstylist_tel = $tel;
+    $stylist->hairstylist_tel = $inputs['電話番号'];
     $stylist->hairstylist_mail = $inputs['メール'];
     $stylist->hairstylist_address = $inputs['住所'];
     $stylist->hairstylist_pass = Hash::make($pass);
@@ -99,13 +92,6 @@ class Hairstylist extends Model
     //変更者のメールアドレスがDBに存在するならstylistsに値が入る
     $stylists = Hairstylist::where($cond_mail)->get();
 
-    $tel;
-    if(isset($inputs['電話番号'])){
-      $tel = $inputs['電話番号'];
-    }else{
-      $tel = '00000000000';
-    }
-
     //コレクション等にisset()は使えないので注意
     if($stylists->isNotEmpty()){
       foreach($stylists as $stylist){
@@ -113,7 +99,7 @@ class Hairstylist extends Model
           Hairstylist::where($cond_id)->update([
             'hairstylist_name'=>$inputs['名前'],
             'hairstylist_kana'=>$inputs['フリガナ'],
-            'hairstylist_tel'=>$tel,
+            'hairstylist_tel'=>$inputs['電話番号'],
             'hairstylist_mail'=>$inputs['メール'],
             'hairstylist_address'=>$inputs['住所'],
             'hairstylist_advantage'=>$inputs['得意スタイル'],
@@ -128,7 +114,7 @@ class Hairstylist extends Model
       Hairstylist::where($cond_id)->update([
         'hairstylist_name'=>$inputs['名前'],
         'hairstylist_kana'=>$inputs['フリガナ'],
-        'hairstylist_tel'=>$tel,
+        'hairstylist_tel'=>$inputs['電話番号'],
         'hairstylist_mail'=>$inputs['メール'],
         'hairstylist_address'=>$inputs['住所'],
         'hairstylist_advantage'=>$inputs['得意スタイル'],
