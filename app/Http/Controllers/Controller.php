@@ -32,7 +32,7 @@ class Controller extends BaseController
       $stylist_id = $request->session()->get('stylist_id');
 
       $res = new Reservation();
-      $reservations = $res->getReservationEveryStylist($stylist_id);
+      $reservations = $res->getTodayReservationEveryStylist($stylist_id);
 
       //セッションが存在する場合はログイン可能
       return view('stylist.stylist_home',[
@@ -1078,7 +1078,7 @@ public function stylistConfirmPossibleToLogin(Request $request){
       $stylist_id = $id->hairstylist_id;
     }
     //美容師IDに紐づく予約を取得
-    $reservations = $res->getReservationEveryStylist($stylist_id);
+    $reservations = $res->getTodayReservationEveryStylist($stylist_id);
     $request->session()->put('stylist_id',$stylist_id);
 
     //ページング用
