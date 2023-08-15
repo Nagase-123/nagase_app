@@ -2,8 +2,13 @@
 
 @section('contents')
 <h1 class="mb-5 heading-msg">予約履歴</h1>
+@if($results->isEmpty())
+<p>予約履歴はありません</p>
+@else
 <p>コメント内容を変更する場合は変更ボタンを押してください</p>
 <p>予約をキャンセルする場合はキャンセルボタンを押してください</p>
+@endif
+
 <table class="tb01">
   <tr class="head">
     <th>ID</th>
