@@ -77,6 +77,7 @@ contact_detail
   .text-center {
     text-align: center !important;
   }
+
 </style>
 </head>
 

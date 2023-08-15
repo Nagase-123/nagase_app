@@ -2,6 +2,9 @@
 
 @section('contents')
 <h1 class="mb-5 heading-msg">予約履歴</h1>
+<p>お客様情報は顧客情報ボタンを押すと確認できます</p>
+<p>予約をキャンセルする場合はキャンセルボタンを押してください</p>
+
 <table class="tb01">
   <tr class="head">
     <th>ID</th>
@@ -13,7 +16,8 @@
     <th>シャンプー</th>
     <th>お子様カット</th>
     <th>コメント</th>
-    <th></th>
+    <th>顧客情報</th>
+    <th>ステータス</th>
   </tr>
 
   <tr>
@@ -55,12 +59,31 @@
     <td data-label="コメント">
     <textarea class="list-text" readonly rows="3">{{ $reservation->reservation_comment }}</textarea>
     </td>
+
     <form method="post" action="/stylist/user_memo">
       @csrf
       <input type="hidden" name="user" value="{{$reservation->user_id}}">
       <td data-label="顧客情報"><button type="submit" name="user_sb" class="td-btn">顧客情報</td>
       </form>
 
+      @php
+      $date = strtotime($reservation->reservation_date);
+      $now = strtotime(date('Y-m-d'));
+      if($now < $date){
+      @endphp
+      <form method="post" action="/stylist/reservation_cancel">
+        @csrf
+        <input type="hidden" name="user_id" value="{{$reservation->user_id}}">
+        <input type="hidden" name="res_id" value="{{$reservation->reservation_id}}">
+        <td data-label="ステータス"><h6>予約中</h6><button type="submit" class="td-btn">キャンセル</td>
+        </form>
+      @php
+        }else{
+      @endphp
+        <td data-label="ステータス">施術済み</td>
+      @php
+        }
+      @endphp
     </tr>
     @endforeach
 

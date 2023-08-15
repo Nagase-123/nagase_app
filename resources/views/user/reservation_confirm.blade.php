@@ -78,7 +78,7 @@
 
     <div class="Form-Item">
       <p class="Form-Item-Label">コメント</p>
-      <textarea class="Form-Item-Textarea confirm-style" name="msg" readonly>{{ $inputs['メッセージ'] }}</textarea>
+      <textarea class="Form-Item-Textarea confirm-style transparent" name="msg" readonly>{{ $inputs['メッセージ'] }}</textarea>
     </div>
 
     @else
