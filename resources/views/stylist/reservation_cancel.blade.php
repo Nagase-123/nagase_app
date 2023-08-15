@@ -12,6 +12,8 @@
 <form method="post" action="/stylist/stylist_comp" autocomplete="off">
   @csrf
   <input type="hidden" name="comp_kinds" value="reservation_cancel_comp">
+  <input type="hidden" name="stylist_id" value="{{$reservation->hairstylist_id}}">
+
 
   <div class="Form-Item">
 

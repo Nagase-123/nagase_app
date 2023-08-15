@@ -267,6 +267,7 @@ class Controller extends BaseController
         $test = $schedule->cancelSchedule($anser);
         $comp_title = "予約キャンセル完了";
         $comp_msg1=" 予約キャンセルが完了しました。";
+        $stylist_id = $inputs['hairstylist_id'];
         break;
 
         /*
