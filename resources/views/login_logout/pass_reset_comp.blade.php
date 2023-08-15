@@ -6,9 +6,10 @@
 @endsection
 
 @section('link1')
+<p class="a-link-style">
 <a href="{{url('/login_logout/login')}}">ログイン画面へ戻る</a>
-@endsection
-
-@section('link2')
+</p>
+<p class="a-link-style">
 <a href="{{url('/login_logout/stylist_login')}}">美容師ログイン画面へ戻る</a>
+</p>
 @endsection
