@@ -145,9 +145,11 @@ class Controller extends BaseController
   */
   public function showCancelReservation(Request $request){
     $inputs = $request->all();
+    $stylist_id = $inputs['stylist_id'];
     $reservations = Reservation::where('reservation_id', $inputs['res_id'])->where('user_id', $inputs['user_id'])->get();
     return view('stylist.reservation_cancel',[
       'reservations'=>$reservations,
+      'stylist_id'=>$stylist_id,
     ]);
   }
 
@@ -267,7 +269,7 @@ class Controller extends BaseController
         $test = $schedule->cancelSchedule($anser);
         $comp_title = "予約キャンセル完了";
         $comp_msg1=" 予約キャンセルが完了しました。";
-        $stylist_id = $inputs['hairstylist_id'];
+        $stylist_id = $inputs['stylist_id'];
         break;
 
         /*
