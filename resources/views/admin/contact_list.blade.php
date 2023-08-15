@@ -29,9 +29,9 @@
         <textarea class="list-text" readonly rows="5">{{$contact->contact_text}}</textarea>
         </td>
         @if($contact->contact_flg == '1')
-        <td data-label="返信状況">返信完了</span></td>
+        <td data-label="返信状況">返信完了</td>
         @else
-        <td data-label="返信状況"><span class="error_msg">※未返信※</td>
+        <td data-label="返信状況"><h6><span class="error_msg">※未返信※</span></h6></td>
           @endif
           <td data-label=""><button type="submit" name="user_sb" class="td-btn">返信</td>
             <input type="hidden" name="contact_id" value="{{$contact->contact_id}}">
