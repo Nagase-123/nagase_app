@@ -2,6 +2,8 @@
 
 @section('contents')
 <h1 class="mb-5 heading-msg">予約履歴</h1>
+<p>コメント内容を変更する場合は変更ボタンを押してください</p>
+<p>予約をキャンセルする場合はキャンセルボタンを押してください</p>
 <table class="tb01">
   <tr class="head">
     <th>ID</th>
@@ -14,8 +16,7 @@
     <th>シャンプー</th>
     <th>お子様カット</th>
     <th>コメント</th>
-    <th></th>
-    <th></th>
+    <th>ステータス</th>
   </tr>
 
   <tr>
@@ -67,12 +68,12 @@
       @endif
 
       <td data-label="コメント">
-      <textarea class="list-text" readonly rows="3">{{ $result->reservation_comment }}</textarea>
-      </td>
+      <textarea class="list-text" readonly rows="2">{{ $result->reservation_comment }}</textarea>
+{{--      </td>
       <td data-label="コメント変更">
         <form action ="/user/comment_change" method="post">
           @csrf
-
+--}}
           @php
           $date = strtotime($result->reservation_date);
           $now = strtotime(date('Y-m-d'));
@@ -81,9 +82,11 @@
               @endphp
 
               <!--                  <input type="submit" class="list_bt" value="コメント" id="edit_bt"> -->
+              <form action ="/user/comment_change" method="post">
+                @csrf
               <input type="hidden" name="res_id" value="{{$result->reservation_id}}">
               <input type="hidden" name="u_id" value="{{$u_id}}">
-              <button type="submit" class="td-btn">コメント</button>
+              <button type="submit" class="td-btn">変更</button>
               @php
             }else{
               echo '編集不可';
@@ -95,7 +98,7 @@
         </td>
       </form>
 
-      <td data-label="キャンセル">
+      <td data-label="ステータス">
         <form action ="./user_comp" method="post">
           @csrf
           <input type="hidden" name="comp_kinds" value="reservation_cancel_user_comp">
@@ -109,6 +112,7 @@
               @endphp
 
               <input type="hidden" name="res_id" value="{{$result->reservation_id}}">
+              <h6>予約中</h6>
               <button type="submit" class="td-btn" name="delete_id" onclick="return alert_js()" value="">キャンセル</button>
               @php
             }else{
@@ -118,7 +122,7 @@
               @php
             }
           }else{
-            echo 'キャンセル不可';
+            echo '施術済み';
           }
           @endphp
         </td>
