@@ -6,9 +6,6 @@
   <tr class="head">
     <th>会員ID</th>
     <th>名前</th>
-    <th>メール</th>
-    <th>電話番号</th>
-    <th>住所</th>
     <th>顧客メモ</th>
     <th>予約履歴</th>
     <th>会員情報修正</th>
@@ -18,9 +15,6 @@
   <tr>
     <td data-label="会員ID">{{$user->user_id}}</td>
     <td data-label="名前">{{$user->user_name}}</td>
-    <td data-label="メール">{{$user->user_mail}}</td>
-    <td data-label="電話">{{$user->user_tel}}</td>
-    <td data-label="住所">{{$user->user_address}}</td>
     <td data-label="顧客メモ">
       <form method="post" action="/stylist/user_memo">
         @csrf
