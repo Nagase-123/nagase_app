@@ -61,7 +61,7 @@
     @endif
 
     <td data-label="コメント">
-    <textarea class="list-text" readonly rows="3">{{ $reservation->reservation_comment }}</textarea>
+      <textarea class="list-text" readonly rows="3">{{ $reservation->reservation_comment }}</textarea>
     </td>
 
     <form method="post" action="/stylist/user_memo">
@@ -72,26 +72,47 @@
 
       @php
       $date = strtotime($reservation->reservation_date);
+      $dateTime = date('H:i', strtotime($reservation->reservation_time));
+
+      $nowTime = date('H:i');
       $now = strtotime(date('Y-m-d'));
+
       if($now < $date){
-      @endphp
-      <form method="post" action="/stylist/reservation_cancel">
-        @csrf
-        <input type="hidden" name="user_id" value="{{$reservation->user_id}}">
-        <input type="hidden" name="res_id" value="{{$reservation->reservation_id}}">
-        <td data-label="ステータス"><h6>予約中</h6><button type="submit" class="td-btn">キャンセル</td>
-        </form>
-      @php
-        }else{
-      @endphp
-        <td data-label="ステータス">施術済み</td>
-      @php
-        }
-      @endphp
-    </tr>
-    @endforeach
+        @endphp
+        <form method="post" action="/stylist/reservation_cancel">
+          @csrf
+          <input type="hidden" name="user_id" value="{{$reservation->user_id}}">
+          <input type="hidden" name="res_id" value="{{$reservation->reservation_id}}">
+          <td data-label="ステータス"><h6>予約中</h6><button type="submit" class="td-btn">キャンセル</td>
+          </form>
+          <!--当日の予約-->
+          @php
+        }else if($now == $date){
+          if($nowTime < $dateTime){
+            @endphp
+            <form method="post" action="/stylist/reservation_cancel">
+              @csrf
+              <input type="hidden" name="user_id" value="{{$reservation->user_id}}">
+              <input type="hidden" name="res_id" value="{{$reservation->reservation_id}}">
+              <td data-label="ステータス"><h6>予約中</h6><button type="submit" class="td-btn">キャンセル</td>
+              </form>
+              @php
+            }else{
+              @endphp
+              <td data-label="ステータス">施術済み</td>
+              @php
+            }
+          }else{
+            @endphp
+            <!--過去の予約-->
+            <td data-label="ステータス">施術済み</td>
+            @php
+          }
+          @endphp
+        </tr>
+        @endforeach
 
-  </table>
+      </table>
 
-  <h6 class="link">{{ $reservations->links() }}</h6>
-  @endsection
+      <h6 class="link">{{ $reservations->links() }}</h6>
+      @endsection
