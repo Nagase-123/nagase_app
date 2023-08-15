@@ -8,3 +8,7 @@
 @section('link1')
 <a href="{{url('/login_logout/login')}}">ログイン画面へ戻る</a>
 @endsection
+
+@section('link2')
+<a href="{{url('/login_logout/stylist_login')}}">美容師ログイン画面へ戻る</a>
+@endsection
