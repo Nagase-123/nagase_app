@@ -18,6 +18,10 @@
             @csrf
 
             <h1 class="mb-5 heading-msg">本日の予約一覧</h1>
+            @if($reservations->isEmpty())
+            <p class="heading-msg">本日の予約はありません</p>
+            @else
+
             <table class="tb01">
               <tr class="head">
                 <th>ID</th>
@@ -35,12 +39,17 @@
               </tr>
 
               <tr>
-                <?php
+                @foreach($reservations as $reservation)
+
+                @php
                 $time = new DateTime();
                 $today = $time->format('Y-m-d');
-                ?>
-                @foreach($reservations as $reservation)
-                @if($reservation->reservation_date == $today && $reservation->reservation_flg == 0)
+
+                $dateTime = date('H:i', strtotime($reservation->reservation_time));
+                $nowTime = date('H:i');
+                @endphp
+
+                @if($reservation->reservation_date == $today)
                 <td data-label="予約番号">{{$reservation->reservation_id}}</td>
                 <td data-label="予約日">{{date('m/d', strtotime($reservation->reservation_date))}}</td>
                 <td data-label="予約時間">{{date('H:i', strtotime($reservation->reservation_time))}}</td>
@@ -85,16 +94,22 @@
                   <td class=""><button type="submit" class="td-btn" name="user_sb">顧客情報</td>
                   </form>
 
+                  @if($nowTime < $dateTime)
                   <form method="post" action="/stylist/reservation_cancel">
                     @csrf
                     <input type="hidden" name="user_id" value="{{$reservation->user_id}}">
                     <input type="hidden" name="res_id" value="{{$reservation->reservation_id}}">
-                    <td class=""><button type="submit" class="td-btn" name="user_sb">キャンセル</td>
+                    <input type="hidden" name="stylist_id" value="{{$reservation->hairstylist_id}}">
+                    <td data-label="ステータス"><h6>予約中</h6><button type="submit" class="td-btn" name="user_sb">キャンセル</td>
                     </form>
+                  @else
+                  <td data-label="ステータス">キャンセル不可</td>
+                  @endif
                   </tr>
                   @endif
                   @endforeach
                 </table>
+                @endif
               </div>
             </div>
 
