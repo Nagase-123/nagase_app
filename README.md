@@ -1,6 +1,9 @@
+## URL
+
+https://nagase-app-c4be2a7c0a2c.herokuapp.com/
+
 
 ## 概要
-https://nagase-app-c4be2a7c0a2c.herokuapp.com/
 
 忙しく美容室に通う時間のない女性に向けて、自宅への美容師訪問サービスの予約サイトを作成しました。
 
@@ -13,14 +16,10 @@ https://nagase-app-c4be2a7c0a2c.herokuapp.com/
 
 動作確認用のテストアカウントをご用意いたしました。
 
-もしよろしければ下記アカウントにて
-
-ログインの上動作をご確認いただければと存じます。
+もしよろしければ下記テストアカウントにて、ログインの上動作をご確認いただければと存じます。
 
 
 ##### 【一般ユーザー】
-
-予約には会員登録が必用です。
 
 会員登録後、予約の登録・削除、予約履歴の閲覧ができます。
 
@@ -31,6 +30,7 @@ https://nagase-app-c4be2a7c0a2c.herokuapp.com/
 メールアドレス→test5@mail
 
 パスワード→test5password
+
 
 ##### 【美容師】
 
@@ -44,6 +44,7 @@ https://nagase-app-c4be2a7c0a2c.herokuapp.com/
 
 パスワード→biyousi5password
 
+
 ##### 【管理者】
 
 予約の確認・削除、スケジュール削除、会員情報編集・削除、お問い合わせへの返信ができます。
@@ -53,3 +54,4 @@ https://nagase-app-c4be2a7c0a2c.herokuapp.com/
 メールアドレス→admin@test.com
 
 パスワード→pass_admin_12_kadai
+
