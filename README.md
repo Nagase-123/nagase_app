@@ -2,6 +2,7 @@
 
 https://nagase-app-c4be2a7c0a2c.herokuapp.com/
 
+<br/>
 
 ## 概要
 
@@ -9,6 +10,7 @@ https://nagase-app-c4be2a7c0a2c.herokuapp.com/
 
 一般ユーザーと、美容師、管理者ごとにそれぞれでログインできるようにしています。
 
+<br/>
 
 ## 使い方
 
@@ -18,6 +20,7 @@ https://nagase-app-c4be2a7c0a2c.herokuapp.com/
 
 もしよろしければ下記テストアカウントにて、ログインの上動作をご確認いただければと存じます。
 
+<br/>
 
 ##### 【一般ユーザー】
 
